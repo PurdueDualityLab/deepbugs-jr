@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      - run: ls
+      - uses: actions/checkout@v2
+      - run: git clone https://github.com/code-correctional-facility/deepbugs-jr
+      - run: git checkout develop
       - run: python3 src/deepbugs-jr.py
-      - run: echo "CI DONE!"
