@@ -5,6 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: git clone https://github.com/code-correctional-facility/deepbugs-jr
       - run: git checkout develop
       - run: python3 src/deepbugs-jr.py
