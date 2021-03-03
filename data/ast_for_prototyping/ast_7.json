@@ -1,0 +1,130 @@
+[
+    {
+        "id": 0,
+        "type": "Program",
+        "children": [
+            1
+        ]
+    },
+    {
+        "id": 1,
+        "type": "FunctionDeclaration",
+        "children": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "id": 2,
+        "type": "Identifier",
+        "value": "hero_Sprite"
+    },
+    {
+        "id": 3,
+        "type": "Identifier",
+        "value": "ga"
+    },
+    {
+        "id": 4,
+        "type": "Identifier",
+        "value": "nameOverride"
+    },
+    {
+        "id": 5,
+        "type": "Identifier",
+        "value": "loadCallBack"
+    },
+    {
+        "id": 6,
+        "type": "BlockStatement",
+        "children": [
+            7
+        ]
+    },
+    {
+        "id": 7,
+        "type": "ReturnStatement",
+        "children": [
+            8
+        ]
+    },
+    {
+        "id": 8,
+        "type": "CallExpression",
+        "children": [
+            9,
+            12,
+            17,
+            18,
+            19
+        ]
+    },
+    {
+        "id": 9,
+        "type": "MemberExpression",
+        "children": [
+            10,
+            11
+        ]
+    },
+    {
+        "id": 10,
+        "type": "Identifier",
+        "value": "SpriteInventory"
+    },
+    {
+        "id": 11,
+        "type": "Property",
+        "value": "TCSpriteFactory"
+    },
+    {
+        "id": 12,
+        "type": "ArrayAccess",
+        "children": [
+            13,
+            16
+        ]
+    },
+    {
+        "id": 13,
+        "type": "MemberExpression",
+        "children": [
+            14,
+            15
+        ]
+    },
+    {
+        "id": 14,
+        "type": "Identifier",
+        "value": "SpriteInventory"
+    },
+    {
+        "id": 15,
+        "type": "Property",
+        "value": "TCSpriteInventory"
+    },
+    {
+        "id": 16,
+        "type": "LiteralString",
+        "value": "9e4a24cf-c760-43ec-abda-3ef2db22e2ab"
+    },
+    {
+        "id": 17,
+        "type": "Identifier",
+        "value": "nameOverride"
+    },
+    {
+        "id": 18,
+        "type": "Identifier",
+        "value": "ga"
+    },
+    {
+        "id": 19,
+        "type": "Identifier",
+        "value": "loadCallBack"
+    },
+    0
+]

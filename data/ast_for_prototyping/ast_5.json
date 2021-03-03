@@ -1,0 +1,2606 @@
+[
+    {
+        "id": 0,
+        "type": "Program",
+        "children": [
+            1,
+            19
+        ]
+    },
+    {
+        "id": 1,
+        "type": "VariableDeclaration",
+        "children": [
+            2,
+            6,
+            15
+        ]
+    },
+    {
+        "id": 2,
+        "type": "VariableDeclarator",
+        "value": "later",
+        "children": [
+            3
+        ]
+    },
+    {
+        "id": 3,
+        "type": "CallExpression",
+        "children": [
+            4,
+            5
+        ]
+    },
+    {
+        "id": 4,
+        "type": "Identifier",
+        "value": "require"
+    },
+    {
+        "id": 5,
+        "type": "LiteralString",
+        "value": "../../index"
+    },
+    {
+        "id": 6,
+        "type": "VariableDeclarator",
+        "value": "runner",
+        "children": [
+            7
+        ]
+    },
+    {
+        "id": 7,
+        "type": "CallExpression",
+        "children": [
+            8,
+            11,
+            12
+        ]
+    },
+    {
+        "id": 8,
+        "type": "CallExpression",
+        "children": [
+            9,
+            10
+        ]
+    },
+    {
+        "id": 9,
+        "type": "Identifier",
+        "value": "require"
+    },
+    {
+        "id": 10,
+        "type": "LiteralString",
+        "value": "./runner"
+    },
+    {
+        "id": 11,
+        "type": "Identifier",
+        "value": "later"
+    },
+    {
+        "id": 12,
+        "type": "MemberExpression",
+        "children": [
+            13,
+            14
+        ]
+    },
+    {
+        "id": 13,
+        "type": "Identifier",
+        "value": "later"
+    },
+    {
+        "id": 14,
+        "type": "Property",
+        "value": "time"
+    },
+    {
+        "id": 15,
+        "type": "VariableDeclarator",
+        "value": "should",
+        "children": [
+            16
+        ]
+    },
+    {
+        "id": 16,
+        "type": "CallExpression",
+        "children": [
+            17,
+            18
+        ]
+    },
+    {
+        "id": 17,
+        "type": "Identifier",
+        "value": "require"
+    },
+    {
+        "id": 18,
+        "type": "LiteralString",
+        "value": "should"
+    },
+    {
+        "id": 19,
+        "type": "ExpressionStatement",
+        "children": [
+            20
+        ]
+    },
+    {
+        "id": 20,
+        "type": "CallExpression",
+        "children": [
+            21,
+            22,
+            23
+        ]
+    },
+    {
+        "id": 21,
+        "type": "Identifier",
+        "value": "describe"
+    },
+    {
+        "id": 22,
+        "type": "LiteralString",
+        "value": "Later.time"
+    },
+    {
+        "id": 23,
+        "type": "FunctionExpression",
+        "children": [
+            24
+        ]
+    },
+    {
+        "id": 24,
+        "type": "BlockStatement",
+        "children": [
+            25,
+            394
+        ]
+    },
+    {
+        "id": 25,
+        "type": "VariableDeclaration",
+        "children": [
+            26
+        ]
+    },
+    {
+        "id": 26,
+        "type": "VariableDeclarator",
+        "value": "tests",
+        "children": [
+            27
+        ]
+    },
+    {
+        "id": 27,
+        "type": "ArrayExpression",
+        "children": [
+            28,
+            53,
+            87,
+            112,
+            146,
+            171,
+            205,
+            233,
+            261,
+            295,
+            326,
+            360
+        ]
+    },
+    {
+        "id": 28,
+        "type": "ObjectExpression",
+        "children": [
+            29,
+            35,
+            37,
+            41,
+            47
+        ]
+    },
+    {
+        "id": 29,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            30
+        ]
+    },
+    {
+        "id": 30,
+        "type": "NewExpression",
+        "children": [
+            31,
+            32,
+            33,
+            34
+        ]
+    },
+    {
+        "id": 31,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 32,
+        "type": "LiteralNumber",
+        "value": "2008"
+    },
+    {
+        "id": 33,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 34,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 35,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            36
+        ]
+    },
+    {
+        "id": 36,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 37,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            38
+        ]
+    },
+    {
+        "id": 38,
+        "type": "ArrayExpression",
+        "children": [
+            39,
+            40
+        ]
+    },
+    {
+        "id": 39,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 40,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 41,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            42
+        ]
+    },
+    {
+        "id": 42,
+        "type": "NewExpression",
+        "children": [
+            43,
+            44,
+            45,
+            46
+        ]
+    },
+    {
+        "id": 43,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 44,
+        "type": "LiteralNumber",
+        "value": "2008"
+    },
+    {
+        "id": 45,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 46,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 47,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            48
+        ]
+    },
+    {
+        "id": 48,
+        "type": "NewExpression",
+        "children": [
+            49,
+            50,
+            51,
+            52
+        ]
+    },
+    {
+        "id": 49,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 50,
+        "type": "LiteralNumber",
+        "value": "2008"
+    },
+    {
+        "id": 51,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 52,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 53,
+        "type": "ObjectExpression",
+        "children": [
+            54,
+            63,
+            65,
+            69,
+            78
+        ]
+    },
+    {
+        "id": 54,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            55
+        ]
+    },
+    {
+        "id": 55,
+        "type": "NewExpression",
+        "children": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+        ]
+    },
+    {
+        "id": 56,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 57,
+        "type": "LiteralNumber",
+        "value": "2009"
+    },
+    {
+        "id": 58,
+        "type": "LiteralNumber",
+        "value": "11"
+    },
+    {
+        "id": 59,
+        "type": "LiteralNumber",
+        "value": "31"
+    },
+    {
+        "id": 60,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 61,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 62,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 63,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            64
+        ]
+    },
+    {
+        "id": 64,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 65,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            66
+        ]
+    },
+    {
+        "id": 66,
+        "type": "ArrayExpression",
+        "children": [
+            67,
+            68
+        ]
+    },
+    {
+        "id": 67,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 68,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 69,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            70
+        ]
+    },
+    {
+        "id": 70,
+        "type": "NewExpression",
+        "children": [
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77
+        ]
+    },
+    {
+        "id": 71,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 72,
+        "type": "LiteralNumber",
+        "value": "2009"
+    },
+    {
+        "id": 73,
+        "type": "LiteralNumber",
+        "value": "11"
+    },
+    {
+        "id": 74,
+        "type": "LiteralNumber",
+        "value": "31"
+    },
+    {
+        "id": 75,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 76,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 77,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 78,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            79
+        ]
+    },
+    {
+        "id": 79,
+        "type": "NewExpression",
+        "children": [
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+        ]
+    },
+    {
+        "id": 80,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 81,
+        "type": "LiteralNumber",
+        "value": "2009"
+    },
+    {
+        "id": 82,
+        "type": "LiteralNumber",
+        "value": "11"
+    },
+    {
+        "id": 83,
+        "type": "LiteralNumber",
+        "value": "31"
+    },
+    {
+        "id": 84,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 85,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 86,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 87,
+        "type": "ObjectExpression",
+        "children": [
+            88,
+            94,
+            96,
+            100,
+            106
+        ]
+    },
+    {
+        "id": 88,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            89
+        ]
+    },
+    {
+        "id": 89,
+        "type": "NewExpression",
+        "children": [
+            90,
+            91,
+            92,
+            93
+        ]
+    },
+    {
+        "id": 90,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 91,
+        "type": "LiteralNumber",
+        "value": "2010"
+    },
+    {
+        "id": 92,
+        "type": "LiteralNumber",
+        "value": "7"
+    },
+    {
+        "id": 93,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 94,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            95
+        ]
+    },
+    {
+        "id": 95,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 96,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            97
+        ]
+    },
+    {
+        "id": 97,
+        "type": "ArrayExpression",
+        "children": [
+            98,
+            99
+        ]
+    },
+    {
+        "id": 98,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 99,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 100,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            101
+        ]
+    },
+    {
+        "id": 101,
+        "type": "NewExpression",
+        "children": [
+            102,
+            103,
+            104,
+            105
+        ]
+    },
+    {
+        "id": 102,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 103,
+        "type": "LiteralNumber",
+        "value": "2010"
+    },
+    {
+        "id": 104,
+        "type": "LiteralNumber",
+        "value": "7"
+    },
+    {
+        "id": 105,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 106,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            107
+        ]
+    },
+    {
+        "id": 107,
+        "type": "NewExpression",
+        "children": [
+            108,
+            109,
+            110,
+            111
+        ]
+    },
+    {
+        "id": 108,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 109,
+        "type": "LiteralNumber",
+        "value": "2010"
+    },
+    {
+        "id": 110,
+        "type": "LiteralNumber",
+        "value": "7"
+    },
+    {
+        "id": 111,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 112,
+        "type": "ObjectExpression",
+        "children": [
+            113,
+            122,
+            124,
+            128,
+            137
+        ]
+    },
+    {
+        "id": 113,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            114
+        ]
+    },
+    {
+        "id": 114,
+        "type": "NewExpression",
+        "children": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121
+        ]
+    },
+    {
+        "id": 115,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 116,
+        "type": "LiteralNumber",
+        "value": "2011"
+    },
+    {
+        "id": 117,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 118,
+        "type": "LiteralNumber",
+        "value": "30"
+    },
+    {
+        "id": 119,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 120,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 121,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 122,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            123
+        ]
+    },
+    {
+        "id": 123,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 124,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            125
+        ]
+    },
+    {
+        "id": 125,
+        "type": "ArrayExpression",
+        "children": [
+            126,
+            127
+        ]
+    },
+    {
+        "id": 126,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 127,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 128,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            129
+        ]
+    },
+    {
+        "id": 129,
+        "type": "NewExpression",
+        "children": [
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136
+        ]
+    },
+    {
+        "id": 130,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 131,
+        "type": "LiteralNumber",
+        "value": "2011"
+    },
+    {
+        "id": 132,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 133,
+        "type": "LiteralNumber",
+        "value": "30"
+    },
+    {
+        "id": 134,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 135,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 136,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 137,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            138
+        ]
+    },
+    {
+        "id": 138,
+        "type": "NewExpression",
+        "children": [
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145
+        ]
+    },
+    {
+        "id": 139,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 140,
+        "type": "LiteralNumber",
+        "value": "2011"
+    },
+    {
+        "id": 141,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 142,
+        "type": "LiteralNumber",
+        "value": "30"
+    },
+    {
+        "id": 143,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 144,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 145,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 146,
+        "type": "ObjectExpression",
+        "children": [
+            147,
+            153,
+            155,
+            159,
+            165
+        ]
+    },
+    {
+        "id": 147,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            148
+        ]
+    },
+    {
+        "id": 148,
+        "type": "NewExpression",
+        "children": [
+            149,
+            150,
+            151,
+            152
+        ]
+    },
+    {
+        "id": 149,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 150,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 151,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 152,
+        "type": "LiteralNumber",
+        "value": "28"
+    },
+    {
+        "id": 153,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            154
+        ]
+    },
+    {
+        "id": 154,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 155,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            156
+        ]
+    },
+    {
+        "id": 156,
+        "type": "ArrayExpression",
+        "children": [
+            157,
+            158
+        ]
+    },
+    {
+        "id": 157,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 158,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 159,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            160
+        ]
+    },
+    {
+        "id": 160,
+        "type": "NewExpression",
+        "children": [
+            161,
+            162,
+            163,
+            164
+        ]
+    },
+    {
+        "id": 161,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 162,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 163,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 164,
+        "type": "LiteralNumber",
+        "value": "28"
+    },
+    {
+        "id": 165,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            166
+        ]
+    },
+    {
+        "id": 166,
+        "type": "NewExpression",
+        "children": [
+            167,
+            168,
+            169,
+            170
+        ]
+    },
+    {
+        "id": 167,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 168,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 169,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 170,
+        "type": "LiteralNumber",
+        "value": "28"
+    },
+    {
+        "id": 171,
+        "type": "ObjectExpression",
+        "children": [
+            172,
+            181,
+            183,
+            187,
+            196
+        ]
+    },
+    {
+        "id": 172,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            173
+        ]
+    },
+    {
+        "id": 173,
+        "type": "NewExpression",
+        "children": [
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180
+        ]
+    },
+    {
+        "id": 174,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 175,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 176,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 177,
+        "type": "LiteralNumber",
+        "value": "29"
+    },
+    {
+        "id": 178,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 179,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 180,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 181,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            182
+        ]
+    },
+    {
+        "id": 182,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 183,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            184
+        ]
+    },
+    {
+        "id": 184,
+        "type": "ArrayExpression",
+        "children": [
+            185,
+            186
+        ]
+    },
+    {
+        "id": 185,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 186,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 187,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            188
+        ]
+    },
+    {
+        "id": 188,
+        "type": "NewExpression",
+        "children": [
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195
+        ]
+    },
+    {
+        "id": 189,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 190,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 191,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 192,
+        "type": "LiteralNumber",
+        "value": "29"
+    },
+    {
+        "id": 193,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 194,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 195,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 196,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            197
+        ]
+    },
+    {
+        "id": 197,
+        "type": "NewExpression",
+        "children": [
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204
+        ]
+    },
+    {
+        "id": 198,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 199,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 200,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 201,
+        "type": "LiteralNumber",
+        "value": "29"
+    },
+    {
+        "id": 202,
+        "type": "LiteralNumber",
+        "value": "23"
+    },
+    {
+        "id": 203,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 204,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 205,
+        "type": "ObjectExpression",
+        "children": [
+            206,
+            213,
+            215,
+            219,
+            226
+        ]
+    },
+    {
+        "id": 206,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            207
+        ]
+    },
+    {
+        "id": 207,
+        "type": "NewExpression",
+        "children": [
+            208,
+            209,
+            210,
+            211,
+            212
+        ]
+    },
+    {
+        "id": 208,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 209,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 210,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 211,
+        "type": "LiteralNumber",
+        "value": "8"
+    },
+    {
+        "id": 212,
+        "type": "LiteralNumber",
+        "value": "14"
+    },
+    {
+        "id": 213,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            214
+        ]
+    },
+    {
+        "id": 214,
+        "type": "LiteralNumber",
+        "value": "50400"
+    },
+    {
+        "id": 215,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            216
+        ]
+    },
+    {
+        "id": 216,
+        "type": "ArrayExpression",
+        "children": [
+            217,
+            218
+        ]
+    },
+    {
+        "id": 217,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 218,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 219,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            220
+        ]
+    },
+    {
+        "id": 220,
+        "type": "NewExpression",
+        "children": [
+            221,
+            222,
+            223,
+            224,
+            225
+        ]
+    },
+    {
+        "id": 221,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 222,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 223,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 224,
+        "type": "LiteralNumber",
+        "value": "8"
+    },
+    {
+        "id": 225,
+        "type": "LiteralNumber",
+        "value": "14"
+    },
+    {
+        "id": 226,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            227
+        ]
+    },
+    {
+        "id": 227,
+        "type": "NewExpression",
+        "children": [
+            228,
+            229,
+            230,
+            231,
+            232
+        ]
+    },
+    {
+        "id": 228,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 229,
+        "type": "LiteralNumber",
+        "value": "2012"
+    },
+    {
+        "id": 230,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 231,
+        "type": "LiteralNumber",
+        "value": "8"
+    },
+    {
+        "id": 232,
+        "type": "LiteralNumber",
+        "value": "14"
+    },
+    {
+        "id": 233,
+        "type": "ObjectExpression",
+        "children": [
+            234,
+            241,
+            243,
+            247,
+            254
+        ]
+    },
+    {
+        "id": 234,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            235
+        ]
+    },
+    {
+        "id": 235,
+        "type": "NewExpression",
+        "children": [
+            236,
+            237,
+            238,
+            239,
+            240
+        ]
+    },
+    {
+        "id": 236,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 237,
+        "type": "LiteralNumber",
+        "value": "2013"
+    },
+    {
+        "id": 238,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 239,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 240,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 241,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            242
+        ]
+    },
+    {
+        "id": 242,
+        "type": "LiteralNumber",
+        "value": "7200"
+    },
+    {
+        "id": 243,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            244
+        ]
+    },
+    {
+        "id": 244,
+        "type": "ArrayExpression",
+        "children": [
+            245,
+            246
+        ]
+    },
+    {
+        "id": 245,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 246,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 247,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            248
+        ]
+    },
+    {
+        "id": 248,
+        "type": "NewExpression",
+        "children": [
+            249,
+            250,
+            251,
+            252,
+            253
+        ]
+    },
+    {
+        "id": 249,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 250,
+        "type": "LiteralNumber",
+        "value": "2013"
+    },
+    {
+        "id": 251,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 252,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 253,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 254,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            255
+        ]
+    },
+    {
+        "id": 255,
+        "type": "NewExpression",
+        "children": [
+            256,
+            257,
+            258,
+            259,
+            260
+        ]
+    },
+    {
+        "id": 256,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 257,
+        "type": "LiteralNumber",
+        "value": "2013"
+    },
+    {
+        "id": 258,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 259,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 260,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 261,
+        "type": "ObjectExpression",
+        "children": [
+            262,
+            271,
+            273,
+            277,
+            286
+        ]
+    },
+    {
+        "id": 262,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            263
+        ]
+    },
+    {
+        "id": 263,
+        "type": "NewExpression",
+        "children": [
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270
+        ]
+    },
+    {
+        "id": 264,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 265,
+        "type": "LiteralNumber",
+        "value": "2014"
+    },
+    {
+        "id": 266,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 267,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 268,
+        "type": "LiteralNumber",
+        "value": "6"
+    },
+    {
+        "id": 269,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 270,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 271,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            272
+        ]
+    },
+    {
+        "id": 272,
+        "type": "LiteralNumber",
+        "value": "25199"
+    },
+    {
+        "id": 273,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            274
+        ]
+    },
+    {
+        "id": 274,
+        "type": "ArrayExpression",
+        "children": [
+            275,
+            276
+        ]
+    },
+    {
+        "id": 275,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 276,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 277,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            278
+        ]
+    },
+    {
+        "id": 278,
+        "type": "NewExpression",
+        "children": [
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285
+        ]
+    },
+    {
+        "id": 279,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 280,
+        "type": "LiteralNumber",
+        "value": "2014"
+    },
+    {
+        "id": 281,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 282,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 283,
+        "type": "LiteralNumber",
+        "value": "6"
+    },
+    {
+        "id": 284,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 285,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 286,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            287
+        ]
+    },
+    {
+        "id": 287,
+        "type": "NewExpression",
+        "children": [
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294
+        ]
+    },
+    {
+        "id": 288,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 289,
+        "type": "LiteralNumber",
+        "value": "2014"
+    },
+    {
+        "id": 290,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 291,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 292,
+        "type": "LiteralNumber",
+        "value": "6"
+    },
+    {
+        "id": 293,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 294,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 295,
+        "type": "ObjectExpression",
+        "children": [
+            296,
+            304,
+            306,
+            310,
+            318
+        ]
+    },
+    {
+        "id": 296,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            297
+        ]
+    },
+    {
+        "id": 297,
+        "type": "NewExpression",
+        "children": [
+            298,
+            299,
+            300,
+            301,
+            302,
+            303
+        ]
+    },
+    {
+        "id": 298,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 299,
+        "type": "LiteralNumber",
+        "value": "2015"
+    },
+    {
+        "id": 300,
+        "type": "LiteralNumber",
+        "value": "5"
+    },
+    {
+        "id": 301,
+        "type": "LiteralNumber",
+        "value": "19"
+    },
+    {
+        "id": 302,
+        "type": "LiteralNumber",
+        "value": "18"
+    },
+    {
+        "id": 303,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 304,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            305
+        ]
+    },
+    {
+        "id": 305,
+        "type": "LiteralNumber",
+        "value": "66120"
+    },
+    {
+        "id": 306,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            307
+        ]
+    },
+    {
+        "id": 307,
+        "type": "ArrayExpression",
+        "children": [
+            308,
+            309
+        ]
+    },
+    {
+        "id": 308,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 309,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 310,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            311
+        ]
+    },
+    {
+        "id": 311,
+        "type": "NewExpression",
+        "children": [
+            312,
+            313,
+            314,
+            315,
+            316,
+            317
+        ]
+    },
+    {
+        "id": 312,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 313,
+        "type": "LiteralNumber",
+        "value": "2015"
+    },
+    {
+        "id": 314,
+        "type": "LiteralNumber",
+        "value": "5"
+    },
+    {
+        "id": 315,
+        "type": "LiteralNumber",
+        "value": "19"
+    },
+    {
+        "id": 316,
+        "type": "LiteralNumber",
+        "value": "18"
+    },
+    {
+        "id": 317,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 318,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            319
+        ]
+    },
+    {
+        "id": 319,
+        "type": "NewExpression",
+        "children": [
+            320,
+            321,
+            322,
+            323,
+            324,
+            325
+        ]
+    },
+    {
+        "id": 320,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 321,
+        "type": "LiteralNumber",
+        "value": "2015"
+    },
+    {
+        "id": 322,
+        "type": "LiteralNumber",
+        "value": "5"
+    },
+    {
+        "id": 323,
+        "type": "LiteralNumber",
+        "value": "19"
+    },
+    {
+        "id": 324,
+        "type": "LiteralNumber",
+        "value": "18"
+    },
+    {
+        "id": 325,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 326,
+        "type": "ObjectExpression",
+        "children": [
+            327,
+            336,
+            338,
+            342,
+            351
+        ]
+    },
+    {
+        "id": 327,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            328
+        ]
+    },
+    {
+        "id": 328,
+        "type": "NewExpression",
+        "children": [
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335
+        ]
+    },
+    {
+        "id": 329,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 330,
+        "type": "LiteralNumber",
+        "value": "2016"
+    },
+    {
+        "id": 331,
+        "type": "LiteralNumber",
+        "value": "7"
+    },
+    {
+        "id": 332,
+        "type": "LiteralNumber",
+        "value": "29"
+    },
+    {
+        "id": 333,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 334,
+        "type": "LiteralNumber",
+        "value": "56"
+    },
+    {
+        "id": 335,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 336,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            337
+        ]
+    },
+    {
+        "id": 337,
+        "type": "LiteralNumber",
+        "value": "10619"
+    },
+    {
+        "id": 338,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            339
+        ]
+    },
+    {
+        "id": 339,
+        "type": "ArrayExpression",
+        "children": [
+            340,
+            341
+        ]
+    },
+    {
+        "id": 340,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 341,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 342,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            343
+        ]
+    },
+    {
+        "id": 343,
+        "type": "NewExpression",
+        "children": [
+            344,
+            345,
+            346,
+            347,
+            348,
+            349,
+            350
+        ]
+    },
+    {
+        "id": 344,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 345,
+        "type": "LiteralNumber",
+        "value": "2016"
+    },
+    {
+        "id": 346,
+        "type": "LiteralNumber",
+        "value": "7"
+    },
+    {
+        "id": 347,
+        "type": "LiteralNumber",
+        "value": "29"
+    },
+    {
+        "id": 348,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 349,
+        "type": "LiteralNumber",
+        "value": "56"
+    },
+    {
+        "id": 350,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 351,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            352
+        ]
+    },
+    {
+        "id": 352,
+        "type": "NewExpression",
+        "children": [
+            353,
+            354,
+            355,
+            356,
+            357,
+            358,
+            359
+        ]
+    },
+    {
+        "id": 353,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 354,
+        "type": "LiteralNumber",
+        "value": "2016"
+    },
+    {
+        "id": 355,
+        "type": "LiteralNumber",
+        "value": "7"
+    },
+    {
+        "id": 356,
+        "type": "LiteralNumber",
+        "value": "29"
+    },
+    {
+        "id": 357,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 358,
+        "type": "LiteralNumber",
+        "value": "56"
+    },
+    {
+        "id": 359,
+        "type": "LiteralNumber",
+        "value": "59"
+    },
+    {
+        "id": 360,
+        "type": "ObjectExpression",
+        "children": [
+            361,
+            370,
+            372,
+            376,
+            385
+        ]
+    },
+    {
+        "id": 361,
+        "type": "Property",
+        "value": "date",
+        "children": [
+            362
+        ]
+    },
+    {
+        "id": 362,
+        "type": "NewExpression",
+        "children": [
+            363,
+            364,
+            365,
+            366,
+            367,
+            368,
+            369
+        ]
+    },
+    {
+        "id": 363,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 364,
+        "type": "LiteralNumber",
+        "value": "2017"
+    },
+    {
+        "id": 365,
+        "type": "LiteralNumber",
+        "value": "8"
+    },
+    {
+        "id": 366,
+        "type": "LiteralNumber",
+        "value": "4"
+    },
+    {
+        "id": 367,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 368,
+        "type": "LiteralNumber",
+        "value": "31"
+    },
+    {
+        "id": 369,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 370,
+        "type": "Property",
+        "value": "val",
+        "children": [
+            371
+        ]
+    },
+    {
+        "id": 371,
+        "type": "LiteralNumber",
+        "value": "37882"
+    },
+    {
+        "id": 372,
+        "type": "Property",
+        "value": "extent",
+        "children": [
+            373
+        ]
+    },
+    {
+        "id": 373,
+        "type": "ArrayExpression",
+        "children": [
+            374,
+            375
+        ]
+    },
+    {
+        "id": 374,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 375,
+        "type": "LiteralNumber",
+        "value": "86399"
+    },
+    {
+        "id": 376,
+        "type": "Property",
+        "value": "start",
+        "children": [
+            377
+        ]
+    },
+    {
+        "id": 377,
+        "type": "NewExpression",
+        "children": [
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            384
+        ]
+    },
+    {
+        "id": 378,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 379,
+        "type": "LiteralNumber",
+        "value": "2017"
+    },
+    {
+        "id": 380,
+        "type": "LiteralNumber",
+        "value": "8"
+    },
+    {
+        "id": 381,
+        "type": "LiteralNumber",
+        "value": "4"
+    },
+    {
+        "id": 382,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 383,
+        "type": "LiteralNumber",
+        "value": "31"
+    },
+    {
+        "id": 384,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 385,
+        "type": "Property",
+        "value": "end",
+        "children": [
+            386
+        ]
+    },
+    {
+        "id": 386,
+        "type": "NewExpression",
+        "children": [
+            387,
+            388,
+            389,
+            390,
+            391,
+            392,
+            393
+        ]
+    },
+    {
+        "id": 387,
+        "type": "Identifier",
+        "value": "Date"
+    },
+    {
+        "id": 388,
+        "type": "LiteralNumber",
+        "value": "2017"
+    },
+    {
+        "id": 389,
+        "type": "LiteralNumber",
+        "value": "8"
+    },
+    {
+        "id": 390,
+        "type": "LiteralNumber",
+        "value": "4"
+    },
+    {
+        "id": 391,
+        "type": "LiteralNumber",
+        "value": "10"
+    },
+    {
+        "id": 392,
+        "type": "LiteralNumber",
+        "value": "31"
+    },
+    {
+        "id": 393,
+        "type": "LiteralNumber",
+        "value": "22"
+    },
+    {
+        "id": 394,
+        "type": "ExpressionStatement",
+        "children": [
+            395
+        ]
+    },
+    {
+        "id": 395,
+        "type": "CallExpression",
+        "children": [
+            396,
+            399
+        ]
+    },
+    {
+        "id": 396,
+        "type": "MemberExpression",
+        "children": [
+            397,
+            398
+        ]
+    },
+    {
+        "id": 397,
+        "type": "Identifier",
+        "value": "runner"
+    },
+    {
+        "id": 398,
+        "type": "Property",
+        "value": "run"
+    },
+    {
+        "id": 399,
+        "type": "Identifier",
+        "value": "tests"
+    },
+    0
+]

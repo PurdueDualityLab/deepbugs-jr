@@ -1,0 +1,1187 @@
+[
+    {
+        "id": 0,
+        "type": "Program",
+        "children": [
+            1,
+            3
+        ]
+    },
+    {
+        "id": 1,
+        "type": "ExpressionStatement",
+        "children": [
+            2
+        ]
+    },
+    {
+        "id": 2,
+        "type": "LiteralString",
+        "value": "use strict"
+    },
+    {
+        "id": 3,
+        "type": "ExpressionStatement",
+        "children": [
+            4
+        ]
+    },
+    {
+        "id": 4,
+        "type": "CallExpression",
+        "children": [
+            5,
+            8,
+            9,
+            10
+        ]
+    },
+    {
+        "id": 5,
+        "type": "MemberExpression",
+        "children": [
+            6,
+            7
+        ]
+    },
+    {
+        "id": 6,
+        "type": "Identifier",
+        "value": "angular"
+    },
+    {
+        "id": 7,
+        "type": "Property",
+        "value": "module"
+    },
+    {
+        "id": 8,
+        "type": "LiteralString",
+        "value": "ngLocale"
+    },
+    {
+        "id": 9,
+        "type": "ArrayExpression"
+    },
+    {
+        "id": 10,
+        "type": "ArrayExpression",
+        "children": [
+            11,
+            12
+        ]
+    },
+    {
+        "id": 11,
+        "type": "LiteralString",
+        "value": "$provide"
+    },
+    {
+        "id": 12,
+        "type": "FunctionExpression",
+        "children": [
+            13,
+            14
+        ]
+    },
+    {
+        "id": 13,
+        "type": "Identifier",
+        "value": "$provide"
+    },
+    {
+        "id": 14,
+        "type": "BlockStatement",
+        "children": [
+            15,
+            30
+        ]
+    },
+    {
+        "id": 15,
+        "type": "VariableDeclaration",
+        "children": [
+            16
+        ]
+    },
+    {
+        "id": 16,
+        "type": "VariableDeclarator",
+        "value": "PLURAL_CATEGORY",
+        "children": [
+            17
+        ]
+    },
+    {
+        "id": 17,
+        "type": "ObjectExpression",
+        "children": [
+            18,
+            20,
+            22,
+            24,
+            26,
+            28
+        ]
+    },
+    {
+        "id": 18,
+        "type": "Property",
+        "value": "ZERO",
+        "children": [
+            19
+        ]
+    },
+    {
+        "id": 19,
+        "type": "LiteralString",
+        "value": "zero"
+    },
+    {
+        "id": 20,
+        "type": "Property",
+        "value": "ONE",
+        "children": [
+            21
+        ]
+    },
+    {
+        "id": 21,
+        "type": "LiteralString",
+        "value": "one"
+    },
+    {
+        "id": 22,
+        "type": "Property",
+        "value": "TWO",
+        "children": [
+            23
+        ]
+    },
+    {
+        "id": 23,
+        "type": "LiteralString",
+        "value": "two"
+    },
+    {
+        "id": 24,
+        "type": "Property",
+        "value": "FEW",
+        "children": [
+            25
+        ]
+    },
+    {
+        "id": 25,
+        "type": "LiteralString",
+        "value": "few"
+    },
+    {
+        "id": 26,
+        "type": "Property",
+        "value": "MANY",
+        "children": [
+            27
+        ]
+    },
+    {
+        "id": 27,
+        "type": "LiteralString",
+        "value": "many"
+    },
+    {
+        "id": 28,
+        "type": "Property",
+        "value": "OTHER",
+        "children": [
+            29
+        ]
+    },
+    {
+        "id": 29,
+        "type": "LiteralString",
+        "value": "other"
+    },
+    {
+        "id": 30,
+        "type": "ExpressionStatement",
+        "children": [
+            31
+        ]
+    },
+    {
+        "id": 31,
+        "type": "CallExpression",
+        "children": [
+            32,
+            35,
+            36
+        ]
+    },
+    {
+        "id": 32,
+        "type": "MemberExpression",
+        "children": [
+            33,
+            34
+        ]
+    },
+    {
+        "id": 33,
+        "type": "Identifier",
+        "value": "$provide"
+    },
+    {
+        "id": 34,
+        "type": "Property",
+        "value": "value"
+    },
+    {
+        "id": 35,
+        "type": "LiteralString",
+        "value": "$locale"
+    },
+    {
+        "id": 36,
+        "type": "ObjectExpression",
+        "children": [
+            37,
+            105,
+            157,
+            159
+        ]
+    },
+    {
+        "id": 37,
+        "type": "Property",
+        "value": "DATETIME_FORMATS",
+        "children": [
+            38
+        ]
+    },
+    {
+        "id": 38,
+        "type": "ObjectExpression",
+        "children": [
+            39,
+            43,
+            52,
+            66,
+            75,
+            89,
+            91,
+            93,
+            95,
+            97,
+            99,
+            101,
+            103
+        ]
+    },
+    {
+        "id": 39,
+        "type": "Property",
+        "value": "AMPMS",
+        "children": [
+            40
+        ]
+    },
+    {
+        "id": 40,
+        "type": "ArrayExpression",
+        "children": [
+            41,
+            42
+        ]
+    },
+    {
+        "id": 41,
+        "type": "LiteralString",
+        "value": "AM"
+    },
+    {
+        "id": 42,
+        "type": "LiteralString",
+        "value": "PM"
+    },
+    {
+        "id": 43,
+        "type": "Property",
+        "value": "DAY",
+        "children": [
+            44
+        ]
+    },
+    {
+        "id": 44,
+        "type": "ArrayExpression",
+        "children": [
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51
+        ]
+    },
+    {
+        "id": 45,
+        "type": "LiteralString",
+        "value": "zondag"
+    },
+    {
+        "id": 46,
+        "type": "LiteralString",
+        "value": "maandag"
+    },
+    {
+        "id": 47,
+        "type": "LiteralString",
+        "value": "dinsdag"
+    },
+    {
+        "id": 48,
+        "type": "LiteralString",
+        "value": "woensdag"
+    },
+    {
+        "id": 49,
+        "type": "LiteralString",
+        "value": "donderdag"
+    },
+    {
+        "id": 50,
+        "type": "LiteralString",
+        "value": "vrijdag"
+    },
+    {
+        "id": 51,
+        "type": "LiteralString",
+        "value": "zaterdag"
+    },
+    {
+        "id": 52,
+        "type": "Property",
+        "value": "MONTH",
+        "children": [
+            53
+        ]
+    },
+    {
+        "id": 53,
+        "type": "ArrayExpression",
+        "children": [
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+        ]
+    },
+    {
+        "id": 54,
+        "type": "LiteralString",
+        "value": "januari"
+    },
+    {
+        "id": 55,
+        "type": "LiteralString",
+        "value": "februari"
+    },
+    {
+        "id": 56,
+        "type": "LiteralString",
+        "value": "maart"
+    },
+    {
+        "id": 57,
+        "type": "LiteralString",
+        "value": "april"
+    },
+    {
+        "id": 58,
+        "type": "LiteralString",
+        "value": "mei"
+    },
+    {
+        "id": 59,
+        "type": "LiteralString",
+        "value": "juni"
+    },
+    {
+        "id": 60,
+        "type": "LiteralString",
+        "value": "juli"
+    },
+    {
+        "id": 61,
+        "type": "LiteralString",
+        "value": "augustus"
+    },
+    {
+        "id": 62,
+        "type": "LiteralString",
+        "value": "september"
+    },
+    {
+        "id": 63,
+        "type": "LiteralString",
+        "value": "oktober"
+    },
+    {
+        "id": 64,
+        "type": "LiteralString",
+        "value": "november"
+    },
+    {
+        "id": 65,
+        "type": "LiteralString",
+        "value": "december"
+    },
+    {
+        "id": 66,
+        "type": "Property",
+        "value": "SHORTDAY",
+        "children": [
+            67
+        ]
+    },
+    {
+        "id": 67,
+        "type": "ArrayExpression",
+        "children": [
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74
+        ]
+    },
+    {
+        "id": 68,
+        "type": "LiteralString",
+        "value": "zo"
+    },
+    {
+        "id": 69,
+        "type": "LiteralString",
+        "value": "ma"
+    },
+    {
+        "id": 70,
+        "type": "LiteralString",
+        "value": "di"
+    },
+    {
+        "id": 71,
+        "type": "LiteralString",
+        "value": "wo"
+    },
+    {
+        "id": 72,
+        "type": "LiteralString",
+        "value": "do"
+    },
+    {
+        "id": 73,
+        "type": "LiteralString",
+        "value": "vr"
+    },
+    {
+        "id": 74,
+        "type": "LiteralString",
+        "value": "za"
+    },
+    {
+        "id": 75,
+        "type": "Property",
+        "value": "SHORTMONTH",
+        "children": [
+            76
+        ]
+    },
+    {
+        "id": 76,
+        "type": "ArrayExpression",
+        "children": [
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
+        ]
+    },
+    {
+        "id": 77,
+        "type": "LiteralString",
+        "value": "jan."
+    },
+    {
+        "id": 78,
+        "type": "LiteralString",
+        "value": "feb."
+    },
+    {
+        "id": 79,
+        "type": "LiteralString",
+        "value": "mrt."
+    },
+    {
+        "id": 80,
+        "type": "LiteralString",
+        "value": "apr."
+    },
+    {
+        "id": 81,
+        "type": "LiteralString",
+        "value": "mei"
+    },
+    {
+        "id": 82,
+        "type": "LiteralString",
+        "value": "jun."
+    },
+    {
+        "id": 83,
+        "type": "LiteralString",
+        "value": "jul."
+    },
+    {
+        "id": 84,
+        "type": "LiteralString",
+        "value": "aug."
+    },
+    {
+        "id": 85,
+        "type": "LiteralString",
+        "value": "sep."
+    },
+    {
+        "id": 86,
+        "type": "LiteralString",
+        "value": "okt."
+    },
+    {
+        "id": 87,
+        "type": "LiteralString",
+        "value": "nov."
+    },
+    {
+        "id": 88,
+        "type": "LiteralString",
+        "value": "dec."
+    },
+    {
+        "id": 89,
+        "type": "Property",
+        "value": "fullDate",
+        "children": [
+            90
+        ]
+    },
+    {
+        "id": 90,
+        "type": "LiteralString",
+        "value": "EEEE d MMMM y"
+    },
+    {
+        "id": 91,
+        "type": "Property",
+        "value": "longDate",
+        "children": [
+            92
+        ]
+    },
+    {
+        "id": 92,
+        "type": "LiteralString",
+        "value": "d MMMM y"
+    },
+    {
+        "id": 93,
+        "type": "Property",
+        "value": "medium",
+        "children": [
+            94
+        ]
+    },
+    {
+        "id": 94,
+        "type": "LiteralString",
+        "value": "d MMM y HH:mm:ss"
+    },
+    {
+        "id": 95,
+        "type": "Property",
+        "value": "mediumDate",
+        "children": [
+            96
+        ]
+    },
+    {
+        "id": 96,
+        "type": "LiteralString",
+        "value": "d MMM y"
+    },
+    {
+        "id": 97,
+        "type": "Property",
+        "value": "mediumTime",
+        "children": [
+            98
+        ]
+    },
+    {
+        "id": 98,
+        "type": "LiteralString",
+        "value": "HH:mm:ss"
+    },
+    {
+        "id": 99,
+        "type": "Property",
+        "value": "short",
+        "children": [
+            100
+        ]
+    },
+    {
+        "id": 100,
+        "type": "LiteralString",
+        "value": "dd-MM-yy HH:mm"
+    },
+    {
+        "id": 101,
+        "type": "Property",
+        "value": "shortDate",
+        "children": [
+            102
+        ]
+    },
+    {
+        "id": 102,
+        "type": "LiteralString",
+        "value": "dd-MM-yy"
+    },
+    {
+        "id": 103,
+        "type": "Property",
+        "value": "shortTime",
+        "children": [
+            104
+        ]
+    },
+    {
+        "id": 104,
+        "type": "LiteralString",
+        "value": "HH:mm"
+    },
+    {
+        "id": 105,
+        "type": "Property",
+        "value": "NUMBER_FORMATS",
+        "children": [
+            106
+        ]
+    },
+    {
+        "id": 106,
+        "type": "ObjectExpression",
+        "children": [
+            107,
+            109,
+            111,
+            113
+        ]
+    },
+    {
+        "id": 107,
+        "type": "Property",
+        "value": "CURRENCY_SYM",
+        "children": [
+            108
+        ]
+    },
+    {
+        "id": 108,
+        "type": "LiteralString",
+        "value": "€"
+    },
+    {
+        "id": 109,
+        "type": "Property",
+        "value": "DECIMAL_SEP",
+        "children": [
+            110
+        ]
+    },
+    {
+        "id": 110,
+        "type": "LiteralString",
+        "value": ","
+    },
+    {
+        "id": 111,
+        "type": "Property",
+        "value": "GROUP_SEP",
+        "children": [
+            112
+        ]
+    },
+    {
+        "id": 112,
+        "type": "LiteralString",
+        "value": "."
+    },
+    {
+        "id": 113,
+        "type": "Property",
+        "value": "PATTERNS",
+        "children": [
+            114
+        ]
+    },
+    {
+        "id": 114,
+        "type": "ArrayExpression",
+        "children": [
+            115,
+            136
+        ]
+    },
+    {
+        "id": 115,
+        "type": "ObjectExpression",
+        "children": [
+            116,
+            118,
+            120,
+            122,
+            124,
+            126,
+            128,
+            130,
+            132,
+            134
+        ]
+    },
+    {
+        "id": 116,
+        "type": "Property",
+        "value": "gSize",
+        "children": [
+            117
+        ]
+    },
+    {
+        "id": 117,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 118,
+        "type": "Property",
+        "value": "lgSize",
+        "children": [
+            119
+        ]
+    },
+    {
+        "id": 119,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 120,
+        "type": "Property",
+        "value": "macFrac",
+        "children": [
+            121
+        ]
+    },
+    {
+        "id": 121,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 122,
+        "type": "Property",
+        "value": "maxFrac",
+        "children": [
+            123
+        ]
+    },
+    {
+        "id": 123,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 124,
+        "type": "Property",
+        "value": "minFrac",
+        "children": [
+            125
+        ]
+    },
+    {
+        "id": 125,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 126,
+        "type": "Property",
+        "value": "minInt",
+        "children": [
+            127
+        ]
+    },
+    {
+        "id": 127,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 128,
+        "type": "Property",
+        "value": "negPre",
+        "children": [
+            129
+        ]
+    },
+    {
+        "id": 129,
+        "type": "LiteralString",
+        "value": "-"
+    },
+    {
+        "id": 130,
+        "type": "Property",
+        "value": "negSuf",
+        "children": [
+            131
+        ]
+    },
+    {
+        "id": 131,
+        "type": "LiteralString",
+        "value": ""
+    },
+    {
+        "id": 132,
+        "type": "Property",
+        "value": "posPre",
+        "children": [
+            133
+        ]
+    },
+    {
+        "id": 133,
+        "type": "LiteralString",
+        "value": ""
+    },
+    {
+        "id": 134,
+        "type": "Property",
+        "value": "posSuf",
+        "children": [
+            135
+        ]
+    },
+    {
+        "id": 135,
+        "type": "LiteralString",
+        "value": ""
+    },
+    {
+        "id": 136,
+        "type": "ObjectExpression",
+        "children": [
+            137,
+            139,
+            141,
+            143,
+            145,
+            147,
+            149,
+            151,
+            153,
+            155
+        ]
+    },
+    {
+        "id": 137,
+        "type": "Property",
+        "value": "gSize",
+        "children": [
+            138
+        ]
+    },
+    {
+        "id": 138,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 139,
+        "type": "Property",
+        "value": "lgSize",
+        "children": [
+            140
+        ]
+    },
+    {
+        "id": 140,
+        "type": "LiteralNumber",
+        "value": "3"
+    },
+    {
+        "id": 141,
+        "type": "Property",
+        "value": "macFrac",
+        "children": [
+            142
+        ]
+    },
+    {
+        "id": 142,
+        "type": "LiteralNumber",
+        "value": "0"
+    },
+    {
+        "id": 143,
+        "type": "Property",
+        "value": "maxFrac",
+        "children": [
+            144
+        ]
+    },
+    {
+        "id": 144,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 145,
+        "type": "Property",
+        "value": "minFrac",
+        "children": [
+            146
+        ]
+    },
+    {
+        "id": 146,
+        "type": "LiteralNumber",
+        "value": "2"
+    },
+    {
+        "id": 147,
+        "type": "Property",
+        "value": "minInt",
+        "children": [
+            148
+        ]
+    },
+    {
+        "id": 148,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 149,
+        "type": "Property",
+        "value": "negPre",
+        "children": [
+            150
+        ]
+    },
+    {
+        "id": 150,
+        "type": "LiteralString",
+        "value": "¤ "
+    },
+    {
+        "id": 151,
+        "type": "Property",
+        "value": "negSuf",
+        "children": [
+            152
+        ]
+    },
+    {
+        "id": 152,
+        "type": "LiteralString",
+        "value": "-"
+    },
+    {
+        "id": 153,
+        "type": "Property",
+        "value": "posPre",
+        "children": [
+            154
+        ]
+    },
+    {
+        "id": 154,
+        "type": "LiteralString",
+        "value": "¤ "
+    },
+    {
+        "id": 155,
+        "type": "Property",
+        "value": "posSuf",
+        "children": [
+            156
+        ]
+    },
+    {
+        "id": 156,
+        "type": "LiteralString",
+        "value": ""
+    },
+    {
+        "id": 157,
+        "type": "Property",
+        "value": "id",
+        "children": [
+            158
+        ]
+    },
+    {
+        "id": 158,
+        "type": "LiteralString",
+        "value": "nl-nl"
+    },
+    {
+        "id": 159,
+        "type": "Property",
+        "value": "pluralCat",
+        "children": [
+            160
+        ]
+    },
+    {
+        "id": 160,
+        "type": "FunctionExpression",
+        "children": [
+            161,
+            162
+        ]
+    },
+    {
+        "id": 161,
+        "type": "Identifier",
+        "value": "n"
+    },
+    {
+        "id": 162,
+        "type": "BlockStatement",
+        "children": [
+            163,
+            172
+        ]
+    },
+    {
+        "id": 163,
+        "type": "IfStatement",
+        "children": [
+            164,
+            167
+        ]
+    },
+    {
+        "id": 164,
+        "type": "BinaryExpression",
+        "value": "==",
+        "children": [
+            165,
+            166
+        ]
+    },
+    {
+        "id": 165,
+        "type": "Identifier",
+        "value": "n"
+    },
+    {
+        "id": 166,
+        "type": "LiteralNumber",
+        "value": "1"
+    },
+    {
+        "id": 167,
+        "type": "BlockStatement",
+        "children": [
+            168
+        ]
+    },
+    {
+        "id": 168,
+        "type": "ReturnStatement",
+        "children": [
+            169
+        ]
+    },
+    {
+        "id": 169,
+        "type": "MemberExpression",
+        "children": [
+            170,
+            171
+        ]
+    },
+    {
+        "id": 170,
+        "type": "Identifier",
+        "value": "PLURAL_CATEGORY"
+    },
+    {
+        "id": 171,
+        "type": "Property",
+        "value": "ONE"
+    },
+    {
+        "id": 172,
+        "type": "ReturnStatement",
+        "children": [
+            173
+        ]
+    },
+    {
+        "id": 173,
+        "type": "MemberExpression",
+        "children": [
+            174,
+            175
+        ]
+    },
+    {
+        "id": 174,
+        "type": "Identifier",
+        "value": "PLURAL_CATEGORY"
+    },
+    {
+        "id": 175,
+        "type": "Property",
+        "value": "OTHER"
+    },
+    0
+]
