@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: git checkout develop
       - run: cd src
-      - run: python3 -m unittest test_deepbugs_jr.py
+      - run: python3 -m unittest
