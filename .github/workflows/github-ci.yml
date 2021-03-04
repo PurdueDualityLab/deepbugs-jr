@@ -6,11 +6,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: git checkout develop
-      - run: python3 src/deepbugs_jr.py
+      - run: python3 deepbugs_jr.py
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: git checkout develop
-      - run: cd src
       - run: python3 -m unittest
