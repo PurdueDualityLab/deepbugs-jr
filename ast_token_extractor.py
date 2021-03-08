@@ -5,7 +5,18 @@
 test = lambda x : x
 
 # the json data we are actually tokenizing
-def _sriLab_json (node) :
+def _serialized_json (node) :
+    if (node['type'] == "VariableDeclarator" or
+        node['type'] == "Identifier" or
+        node['type'] == "Property" ) :
+        return 'ID:'+node['value']
+    
+    # all javascript primitive literals seem to start with 'literal'
+    if node['type'][0:len('Literal')] == "Literal" :
+        return 'LIT:'+node['value']
+
+    # else
+    return 
     
 
 # oops, thought we were reading acorn parsed output
@@ -61,4 +72,5 @@ def ast2id_or_lit (node) :
     import json
     node == json.dumps(json.loads(node))
 
-    return _acorn_json(node)
+    return _serialized_json(node)
+    #return _acorn_json(node)
