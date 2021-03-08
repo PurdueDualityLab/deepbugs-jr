@@ -4,18 +4,16 @@
 # always good to check
 test = lambda x : x
 
-def ast2id_or_lit (node) :
-    """ast2id_or_lit
-        pulls identifier or literal out of abstract syntax tree
-    """
-    # soft type check on input
-    import json
-    node == json.dumps(json.loads(node))
+# the json data we are actually tokenizing
+def _sriLab_json (node) :
+    
 
-
+# oops, thought we were reading acorn parsed output
+def _acorn_json (node) :
+    
     # common to all we are parsing
-    if node["type"] == "ExpressionStatement" :
-        return node
+    if node["type"] != "ExpressionStatement" :
+        return
 
     #If n is an identifier { "id":4, "type":"Identifier", "value":"console" }, return its name ID:console.
     if node["expression"]["type"] == "Identifier" : 
@@ -53,5 +51,14 @@ def ast2id_or_lit (node) :
         
 
     #For any other AST node n, do not extract its name.
-    return node
+    return 
 
+def ast2id_or_lit (node) :
+    """ast2id_or_lit
+        pulls identifier or literal out of abstract syntax tree
+    """
+    # soft type check on input
+    import json
+    node == json.dumps(json.loads(node))
+
+    return _acorn_json(node)
