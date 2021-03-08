@@ -1,15 +1,27 @@
 name: github-ci
 on: [push]
 jobs:
-  build:
+  build_main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: git checkout develop
       - run: python3 deepbugs_jr.py
-  test:
+  test_main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: git checkout develop
+      - run: python3 -m unittest
+  build_ast2tok:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git checkout jordan
+      - run: python3 ast_token_extractor.py
+  test_ast2tok:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git checkout jordan
       - run: python3 -m unittest
