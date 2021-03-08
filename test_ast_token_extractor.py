@@ -81,6 +81,7 @@ class TestTester(unittest.TestCase):
         
         File = open("data/ast_for_prototyping/ast_0.json",'r')
         lines = File.readlines()
+        close("data/ast_for_prototyping/ast_0.json",'r')
         file_str = ''
         for l in lines :
            file_str += l
