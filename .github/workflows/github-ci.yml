@@ -2,9 +2,13 @@ name: github-ci
 on: [push]
 jobs:
   word2vec:
-    runs-on:
-  build_main:
     runs-on: https://ghcr.io/ugaldedr/word2vec:latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: python3 --version
+      - run: pip3 list gensim
+  build_main:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: python3 deepbugs_jr.py
