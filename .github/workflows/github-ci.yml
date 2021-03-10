@@ -2,21 +2,26 @@ name: github-ci
 on: [push]
 jobs:
   word2vec:
-    runs-on: https://ghcr.io/ugaldedr/word2vec:latest
-    steps:
+    runs-on: ubuntu-latest
+    steps: 
       - uses: actions/checkout@v2
-      - run: python3 --version
+      - run: apt install -y python3-pip
+      - run: pip3 install gensim
       - run: pip3 list gensim
+
+
   build_main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: python3 deepbugs_jr.py
+
   build_ast2tok:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: python3 ast_token_extractor.py
+  
   test_main:
     runs-on: ubuntu-latest
     steps:
