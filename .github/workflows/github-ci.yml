@@ -1,8 +1,10 @@
 name: github-ci
 on: [push]
 jobs:
+  word2vec:
+    runs-on:
   build_main:
-    runs-on: ubuntu-latest
+    runs-on: https://ghcr.io/ugaldedr/word2vec:latest
     steps:
       - uses: actions/checkout@v2
       - run: python3 deepbugs_jr.py
