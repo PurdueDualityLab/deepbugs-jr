@@ -112,4 +112,4 @@ class TestTester(unittest.TestCase):
         self.assertEqual(tf.get_frequency(), assert_dict)
         self.assertEqual(tf.get_most_freq_token(), None)
         self.assertEqual(tf.get_most_freq_token_not_none(), 'ID:summary')
-        # self.assertEqual(test(True), True)
+        
