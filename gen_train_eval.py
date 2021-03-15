@@ -42,6 +42,7 @@ def gen_good_bad_fun_args (data_path:str, positiveExamples_p:float = 0.8) -> Tup
     
     positiveExamples = []
     negativeExamples = []
+    #NOTE: may want to split this up for RAM?
     for File in os.listdir(data_path) :
         some_fn_calls = get_fun2s(File)
         
