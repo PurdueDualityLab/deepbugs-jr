@@ -12,6 +12,7 @@ Refer to section 2.2, 2.3, 2.4 of DeepBugs as source of this task.
 
 import os
 from random import random
+from typing import List, Set, Dict, Tuple, Optional, Union
 
 from ast_token_extractor import *
 #from swarg_fnargs2tokens import get_all_2_arg_fn_calls_from_file 
@@ -29,7 +30,7 @@ word2vec = lambda x :  \
 
 #NOTE:Question: are these vectors simply additive? - checking
 ##              should output go into a folder?
-def gen_good_bad_fun_args (data_path:str, positiveExamples_p:float = 0.8) -> tuple :
+def gen_good_bad_fun_args (data_path:str, positiveExamples_p:float = 0.8) -> Tuple[List,List] :
     """make good bad function args
 
     Args:
