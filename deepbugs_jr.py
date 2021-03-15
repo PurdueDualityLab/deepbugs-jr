@@ -27,9 +27,18 @@ def main():
         File = open(f"data/ast_for_prototyping/ast_{i}.json",'r')
         lines = File.readlines()
         File.close()
-        tokens.append(convert_to_ast(lines))
+        tokens += convert_to_ast(lines)
 
-    model = Word2Vec(tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
+    a = tokens[:]
+    tokens = []
+    for l in a :
+        if l :
+            tokens.append([l])
+        
+    from gensim.test.utils import common_texts
+    print(type(common_texts))
+    #print(tokens[0:50])
+    model = Word2Vec(sentences=tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
 
     timestamp = math.floor(time.time() * 1000)
     model.save("embedding_model_" + str(timestamp))
@@ -37,7 +46,7 @@ def main():
     token_to_vector = dict()
     for token in model.wv.vocab:
         if token.startswith("ID:") or token.startswith("LIT:"):
-            vector = model[token].tolist
+            vector = model[token].tolist()
             token_to_vector[token] = vector
     token_to_vector_file_name = "token_to_vector_" + str(timestamp) + ".json"
     with open(token_to_vector_file_name, "w") as file:
