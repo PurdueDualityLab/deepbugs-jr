@@ -17,7 +17,7 @@ def convert_to_ast(lines):
 
     tokens = []
     for node in nodes:
-        tokens.append(ast2id_or_lit(node))
+        tokens += ast2id_or_lit(node)
 
     return tokens
 
