@@ -29,7 +29,7 @@ word2vec = lambda x :  \
 
 #NOTE:Question: are these vectors simply additive? - checking
 ##              should output go into a folder?
-def gen_good_bad_fun_args (data_path, positiveExamples_p = 0.8) :
+def gen_good_bad_fun_args (data_path:str, positiveExamples_p:float = 0.8) -> tuple :
     """make good bad function args
 
     Args:
@@ -56,5 +56,5 @@ def gen_good_bad_fun_args (data_path, positiveExamples_p = 0.8) :
                     word2vec(fn_call["arg2"]) +
                     word2vec(fn_call["arg1"]))
     
-        return (positiveExamples, negativeExamples)
+    return (positiveExamples, negativeExamples)
          
