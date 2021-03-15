@@ -1,22 +1,43 @@
-# Jordan Winkler
-# Mon Mar  8 05:02:28 EST 2021
+# part 1
+"""
+Given any AST node as a JSON string, extract the token and return a string. This token is what will get passed through Word2Vec to become a vector.
 
-# the json data we are actually tokenizing
-def _serialized_json (node) :
-    if (node['type'] == "VariableDeclarator" or
-        node['type'] == "Identifier" or
-        node['type'] == "Property" ) :
-        return 'ID:'+node['value']
+"""
+
+def ast2id_or_lit (node:dict) :
+    """pulls identifier or literal out of abstract syntax tree
+
+    Args:
+        python dictionary (json file)
+       
+    Returns:
+        string of token LIT:name or ID:name or None 
+    """
+        
+    # soft type check on input
+    #import json
+    #node == json.dumps(json.loads(node))
+
+    # not sure why these are in the data
+    ## acorn devs do what they want
+    if node == 0 : return 
+
+    # the json data we are actually tokenizing
+    if (node["type"] == "VariableDeclarator" or
+        node["type"] == "Identifier" or
+        node["type"] == "Property" ) :
+        return "ID:"+node["value"]
     
-    # all javascript primitive literals seem to start with 'literal'
-    if node['type'][0:len('Literal')] == "Literal" :
-        return 'LIT:'+node['value']
+    # all javascript primitive literals seem to start with "literal"
+    if node["type"][0:len("Literal")] == "Literal" :
+        return "LIT:"+node["value"]
 
     # else
     return 
-    
+
 
 # oops, thought we were reading default acorn parsed output
+## may still be useful 
 def _acorn_json (node) :
     
     # common to all we are parsing
@@ -61,18 +82,6 @@ def _acorn_json (node) :
     #For any other AST node n, do not extract its name.
     return 
 
-def ast2id_or_lit (node) :
-    """ast2id_or_lit
-        pulls identifier or literal out of abstract syntax tree
-    """
-    # soft type check on input
-    #import json
-    #node == json.dumps(json.loads(node))
-
-    # not sure why these are in the data
-    ## acorn devs do what they want
-    if node == 0 : return 
-
-    return _serialized_json(node)
-    #return _acorn_json(node)
-
+# interface, sometimes referenced by these names
+Token = ast2id_or_lit
+token = ast2id_or_lit
