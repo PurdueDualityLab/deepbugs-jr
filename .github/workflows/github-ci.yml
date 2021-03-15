@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: pip3 install gensim
       - run: python3 deepbugs_jr.py
 
   build_ast2tok:
