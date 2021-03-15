@@ -3,8 +3,9 @@
 Given any AST node as a JSON string, extract the token and return a string. This token is what will get passed through Word2Vec to become a vector.
 
 """
+from typing import List, Set, Dict, Tuple, Union, Callable
 
-def ast2id_or_lit (node:dict) :
+def ast2id_or_lit (node:dict) -> Union[str,None]:
     """pulls identifier or literal out of abstract syntax tree
 
     Args:
@@ -20,7 +21,7 @@ def ast2id_or_lit (node:dict) :
 
     # not sure why these are in the data
     ## acorn devs do what they want
-    if node == 0 : return 
+    if node == 0 : return None
 
     # the json data we are actually tokenizing
     if (node["type"] == "VariableDeclarator" or
@@ -33,7 +34,7 @@ def ast2id_or_lit (node:dict) :
         return "LIT:"+node["value"]
 
     # else
-    return 
+    return None
 
 
 # oops, thought we were reading default acorn parsed output
