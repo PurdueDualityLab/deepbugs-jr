@@ -17,7 +17,7 @@ def convert_to_ast(lines):
 
     tokens = []
     for node in nodes:
-        tokens += ast2id_or_lit(node)
+        tokens.append(ast2id_or_lit(node))
 
     return tokens
 
@@ -28,6 +28,7 @@ def main():
         lines = File.readlines()
         File.close()
         tokens.append(convert_to_ast(lines))
+        print(tokens[:])
 
     model = Word2Vec(tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
 
