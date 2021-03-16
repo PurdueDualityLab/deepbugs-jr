@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: pip install gensim
+      - run: pip install gensim mypy
       - run: mypy ast_token_extractor.py
       - run: python3 ast_token_extractor.py
   test_main:
