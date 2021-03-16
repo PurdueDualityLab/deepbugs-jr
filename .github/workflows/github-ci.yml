@@ -5,12 +5,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      #- run: mypy deepbugs_jr.py
       - run: python3 deepbugs_jr.py
-  build_ast2tok:
+  build_extract_token_from_ast_node:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      #- run: mypy ast_token_extractor.py #soooon
       - run: python3 ast_token_extractor.py
+  build_swarg_generate_training_eval_dataset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      #- run: pip3 install mypy
+      #- run: mypy gen_train_eval.py
+      #- run: python3 gen_train_eval.py
+  build_swarg_fnarg_extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      #- run: mypy 
+      #- run: python3 
+  build_tokens_popularity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      #- run: mypy 
+      #- run: python3 
   test_main:
     runs-on: ubuntu-latest
     steps:
