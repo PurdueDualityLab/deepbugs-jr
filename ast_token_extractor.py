@@ -39,11 +39,11 @@ def ast2id_or_lit (node:dict) -> Union[str,None]:
 
 # oops, thought we were reading default acorn parsed output
 ## may still be useful 
-def _acorn_json (node) :
+def _acorn_json (node:dict) -> Union[str,None]:
     
     # common to all we are parsing
     if node["type"] != "ExpressionStatement" :
-        return
+        return None
 
     #If n is an identifier { "id":4, "type":"Identifier", "value":"console" }, return its name ID:console.
     if node["expression"]["type"] == "Identifier" : 
@@ -81,7 +81,7 @@ def _acorn_json (node) :
         
 
     #For any other AST node n, do not extract its name.
-    return 
+    return None
 
 # interface, sometimes referenced by these names
 Token = ast2id_or_lit
