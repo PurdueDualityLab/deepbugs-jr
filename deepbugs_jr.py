@@ -27,7 +27,12 @@ def main():
         File = open(f"data/ast_for_prototyping/ast_{i}.json",'r')
         lines = File.readlines()
         File.close()
+<<<<<<< HEAD
         tokens += convert_to_ast(lines)
+=======
+        tokens.append(convert_to_ast(lines))
+        print(tokens[:])
+>>>>>>> 7543d0c6b2778f391e16d1168d4ddc0a2f98a214
 
     a = tokens[:]
     tokens = []
