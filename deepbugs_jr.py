@@ -27,13 +27,10 @@ def main():
         File = open(f"data/ast_for_prototyping/ast_{i}.json",'r')
         lines = File.readlines()
         File.close()
-<<<<<<< HEAD
         tokens += convert_to_ast(lines)
-=======
-        tokens.append(convert_to_ast(lines))
-        print(tokens[:])
->>>>>>> 7543d0c6b2778f391e16d1168d4ddc0a2f98a214
+        #print(tokens[:])
 
+    # Filter out None, and put each token in a list
     a = tokens[:]
     tokens = []
     for l in a :
@@ -41,7 +38,7 @@ def main():
             tokens.append([l])
         
     from gensim.test.utils import common_texts
-    print(type(common_texts))
+    #print(type(common_texts))
     #print(tokens[0:50])
     model = Word2Vec(sentences=tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
 
