@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      #- run: pip3 install mypy
       #- run: mypy gen_train_eval.py
       #- run: python3 gen_train_eval.py
   build_swarg_fnarg_extract:
