@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      #- run: mypy ast_token_extractor.py #soooon
+      - run: pip install gensim mypy
+      - run: mypy ast_token_extractor.py
       - run: python3 ast_token_extractor.py
   build_swarg_generate_training_eval_dataset:
     runs-on: ubuntu-latest

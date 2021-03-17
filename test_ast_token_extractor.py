@@ -1,9 +1,8 @@
 import unittest
 from ast_token_extractor import ast2id_or_lit 
 
-    
 # manually checked outs, regression style test
-test_stock = [
+json0_tokens = [
     None,
     None,
     "ID:gTestfile",
@@ -79,6 +78,7 @@ test_stock = [
 class TestTester(unittest.TestCase):
     def test_function(self):
         
+        # test file -> json (python hash table)
         File = open("data/ast_for_prototyping/ast_0.json",'r')
         lines = File.readlines()
         File.close()
@@ -88,9 +88,12 @@ class TestTester(unittest.TestCase):
         file_str.replace('\n','')
         nodes = eval(file_str) # json is legal python
         
+        # run test function over all hash tables
         test_outputs = []
         for node in nodes :
             test_outputs.append(ast2id_or_lit(node))
 
-        for i in range(len(test_stock)) :
-            self.assertEqual(test_outputs[i], test_stock[i])
+        # check if output matches manual check
+        for i in range(len(json0_tokens)) :
+            self.assertEqual(test_outputs[i], json0_tokens[i])
+
