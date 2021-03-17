@@ -90,19 +90,17 @@ class TestSwargFnArgs2Tokens_GetAll2ArgFnCallsFromFile(unittest.TestCase):
         with open(test_filename, "w") as temp_json:
             json.dump(TEST_AST, temp_json)
 
-        with open(test_filename, "r") as temp_json_r:
-            ast = json.load(temp_json_r)
-            self.assertListEqual(swarg_fnargs2tokens.get_all_2_arg_fn_calls_from_ast(ast), [
-                {
-                    "fn_name": "ID:log",
-                    "arg1": "ID:strVar",
-                    "arg2": "LIT:true"
-                },
-                {
-                    "fn_name": "ID:fnName",
-                    "arg1": "LIT:false",
-                    "arg2": "LIT:hello"
-                }
-            ])
+        self.assertListEqual(swarg_fnargs2tokens.get_all_2_arg_fn_calls_from_file(test_filename), [
+            {
+                "fn_name": "ID:log",
+                "arg1": "ID:strVar",
+                "arg2": "LIT:true"
+            },
+            {
+                "fn_name": "ID:fnName",
+                "arg1": "LIT:false",
+                "arg2": "LIT:hello"
+            }
+        ])
 
         os.remove(test_filename)
