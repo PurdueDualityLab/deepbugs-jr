@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      #- run: mypy 
+      - run: pip3 install keras 
       - run: python3 NN_basemodel.py
   test_main:
     runs-on: ubuntu-latest
