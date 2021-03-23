@@ -64,6 +64,9 @@ artifacts/
 # StyleCop
 StyleCopReport.xml
 
+# Visual Studio Code setting
+.vscode
+
 # Files built by Visual Studio
 *_i.c
 *_p.c
@@ -348,3 +351,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Apple products tend to use this file system hint
+.DS_Store

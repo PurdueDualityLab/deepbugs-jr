@@ -1,8 +1,8 @@
 import unittest
-from ast_token_extractor import ast2id_or_lit 
+import token_freq
 
-# manually checked outs, regression style test
-json0_tokens = [
+
+test_stock = [
     None,
     None,
     "ID:gTestfile",
@@ -74,26 +74,45 @@ json0_tokens = [
     "LIT:test",
     None
 ]
+        
+assert_dict = {
+    None: 35, 
+    'ID:summary': 3, 
+    'ID:BUGNUMBER': 2, 
+    'ID:actual': 2, 
+    'LIT:': 2, 
+    'ID:expect': 2, 
+    'ID:test': 2, 
+    'LIT:test': 2, 
+    'ID:jit': 2, 
+    'ID:f': 2, 
+    'ID:gTestfile': 1, 
+    'LIT:regress-472450-04.js': 1, 
+    'LIT:472450': 1, 
+    'LIT:TM: Do not assert: StackBase(fp) + blockDepth == regs.sp': 1, 
+    'ID:enterFunc': 1, 
+    'ID:printBugNumber': 1, 
+    'ID:printStatus': 1, 
+    'LIT:true': 1, 
+    'ID:__proto__': 1, 
+    'ID:✖': 1, 
+    'LIT:1': 1, 
+    'ID:eval': 1, 
+    "LIT:for (var y = 0; y < 1; ++y) { for each (let z in [null, function(){}, null, '', null, '', null]) { let x = 1, c = []; } }": 1, 
+    'LIT:false': 1, 
+    'ID:reportCompare': 1, 
+    'ID:exitFunc': 1
+}
+
 
 class TestTester(unittest.TestCase):
     def test_function(self):
-        
-        # test file -> json (python hash table)
-        File = open("data/ast_for_prototyping/ast_0.json",'r')
-        lines = File.readlines()
-        File.close()
-        file_str = ''
-        for l in lines :
-           file_str += l
-        file_str.replace('\n','')
-        nodes = eval(file_str) # json is legal python
-        
-        # run test function over all hash tables
-        test_outputs = []
-        for node in nodes :
-            test_outputs.append(ast2id_or_lit(node))
 
-        # check if output matches manual check
-        for i in range(len(json0_tokens)) :
-            self.assertEqual(test_outputs[i], json0_tokens[i])
-
+        tf = token_freq.TokenFrequency(test_stock)
+        self.assertEqual(tf.get_frequency(), assert_dict)
+        self.assertEqual(tf.get_most_freq_token(), None)
+        self.assertEqual(tf.get_most_freq_token_not_none(), 'ID:summary')
+        self.run(tf.clear_list())
+        self.assertEqual(tf.add_token('a'), {'a':1})
+        self.assertEqual(tf.add_token('a'), {'a':2})
+        
