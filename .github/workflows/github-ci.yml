@@ -16,14 +16,6 @@ jobs:
       - run: pip install gensim mypy
       - run: mypy ast_token_extractor.py
       - run: python3 ast_token_extractor.py
-  
-  build_swarg_generate_training_eval_dataset:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip3 install mypy
-      - run: mypy gen_train_eval.py
-      - run: python3 gen_train_eval.py
       
   build_swarg_fnarg_extract:
     runs-on: ubuntu-latest
