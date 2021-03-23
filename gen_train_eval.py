@@ -17,7 +17,7 @@ from typing import List, Set, Dict, Tuple, Optional, Union
 from ast_token_extractor import *
 #from swarg_fnargs2tokens import get_all_2_arg_fn_calls_from_file 
 
-positiveExamples_p = 0.8
+positiveExamples_p = 0.5
 data_path = "data/ast_for_protoyping/"
 
 # interfaces/stubs
