@@ -1,5 +1,6 @@
 import json
 from ast_token_extractor import ast2id_or_lit
+from typing import List, Set, Dict, Tuple, Optional, Union
 
 def get_all_2_arg_fn_calls_from_file(ast_filename:str)->list:
     """Given a filename, parses the AST JSON, returns a list of 2-argument function calls with their tokens
@@ -69,7 +70,7 @@ def get_fn_name(node_id: int, ast: list)->Optional[str]:
 
     return None # If you got here, this node should be yeeted
 
-def get_arg(node_id: int, ast: list)->str:
+def get_arg(node_id: int, ast: list)->Optional[str]:
     """Given the second or third child of a CallExpression node, figures out the argument token (e.g. "ID:varName" or "LIT:true")
 
     Args:
