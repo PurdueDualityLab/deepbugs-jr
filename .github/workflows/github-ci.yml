@@ -1,20 +1,6 @@
 name: github-ci
 on: [push]
 jobs:
-  word2vec:
-    runs-on: ubuntu-latest
-    steps: 
-      - uses: actions/checkout@v2
-      - name: Set up gensim
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - run: pip3 list gensim
-
 
   build_main:
     runs-on: ubuntu-latest
@@ -33,4 +19,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: pip3 isntall gensim
       - run: python3 -m unittest
