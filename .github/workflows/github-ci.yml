@@ -31,8 +31,12 @@ jobs:
       - uses: actions/checkout@v2
       #- run: mypy 
       #- run: python3 
-      
-
+  build_NN:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pip3 install tensorflow keras
+      - run: python3 NN_basemodel.py
   test_main:
     runs-on: ubuntu-latest
     steps:
