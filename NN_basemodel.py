@@ -44,27 +44,28 @@ model = basemodel()
 #Compile the model using binary_cross loss function and rmsprop optim
 model.compile(loss='binary_crossentropy',optimizer='rmsprop', metrics=['accuracy'])
 
-model_mdata = model.fit(data_train, labels_train, validation_data=(data_test, labels_test), epochs=10, batch_size=100, shuffle=True)
+
+# model_mdata = model.fit(data_train, labels_train, validation_data=(data_test, labels_test), epochs=10, batch_size=100, shuffle=True)
 
 #FILL THIS IN
-scores = model.evaluate(data_test, labels_test)
-print("Accuracy: %.2f%%"%(scores[1]*100))
+# scores = model.evaluate(data_test, labels_test)
+# print("Accuracy: %.2f%%"%(scores[1]*100))
 
 #Plot accuracy vs epoch
-plt.plot(model_mdata.history['accuracy'])
-plt.plot(model_mdata.history['val_accuracy'])
-plt.title('Model Accuracy vs. Epoch')
-plt.ylabel('Model Accuracy')
-plt.xlabel('Epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.show()
+# plt.plot(model_mdata.history['accuracy'])
+# plt.plot(model_mdata.history['val_accuracy'])
+# plt.title('Model Accuracy vs. Epoch')
+# plt.ylabel('Model Accuracy')
+# plt.xlabel('Epoch')
+# plt.legend(['train', 'test'], loc='upper left')
+# plt.show()
 
 #Plot accuracy vs epoch
-plt.plot(model_mdata.history['loss'])
-plt.plot(model_mdata.history['val_loss'])
-plt.title('Model loss vs. Epoch')
-plt.ylabel('Model loss')
-plt.xlabel('Epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.show()
+# plt.plot(model_mdata.history['loss'])
+# plt.plot(model_mdata.history['val_loss'])
+# plt.title('Model loss vs. Epoch')
+# plt.ylabel('Model loss')
+# plt.xlabel('Epoch')
+# plt.legend(['train', 'test'], loc='upper left')
+# plt.show()
 
