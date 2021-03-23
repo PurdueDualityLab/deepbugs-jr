@@ -47,7 +47,7 @@ def get_all_2_arg_fn_calls_from_ast(ast: list)->list:
     
     return all_fn_calls
 
-def get_fn_name(node_id: int, ast: list)->str:
+def get_fn_name(node_id: int, ast: list)->Optional[str]:
     """Given the first child of a CallExpression node, figures out the function token (e.g. "ID:fnName")
 
     Args:
