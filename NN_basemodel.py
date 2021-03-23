@@ -16,21 +16,16 @@ Original file is located at
 # Train for 10 epochs. Batch size 100
 
 #Libraries to create the multiclass model
+import keras
 from keras.models import Sequential
-from keras.layers import Dense
+from keras.layers import Dense, Dropout
 from keras.wrappers.scikit_learn import KerasClassifier
 from keras.utils import np_utils
 
-#Import tensorflow and disable the v2 behavior and eager mode
-import tensorflow as tf
-tf.compat.v1.disable_eager_execution()
-tf.compat.v1.disable_v2_behavior()
-
-
 def basemodel():
-  model = Sequential() 
+  model = Sequential()
 
-  #Adding 20% dropout 
+  #Adding 20% dropout
   model.add(Dropout(0.20))
 
   #Add 1 layer with output 200 and relu function
@@ -39,7 +34,7 @@ def basemodel():
   #Adding 20% dropout here
   model.add(Dropout(0.20))
 
-  #Add 1 layer with output 1 and sigmoid function 
+  #Add 1 layer with output 1 and sigmoid function
   model.add(Dense(1,activation='sigmoid'))
 
   return model
@@ -54,3 +49,22 @@ model_mdata = model.fit(data_train, labels_train, validation_data=(data_test, la
 #FILL THIS IN
 scores = model.evaluate(data_test, labels_test)
 print("Accuracy: %.2f%%"%(scores[1]*100))
+
+#Plot accuracy vs epoch
+plt.plot(model_mdata.history['accuracy'])
+plt.plot(model_mdata.history['val_accuracy'])
+plt.title('Model Accuracy vs. Epoch')
+plt.ylabel('Model Accuracy')
+plt.xlabel('Epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
+#Plot accuracy vs epoch
+plt.plot(model_mdata.history['loss'])
+plt.plot(model_mdata.history['val_loss'])
+plt.title('Model loss vs. Epoch')
+plt.ylabel('Model loss')
+plt.xlabel('Epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+
