@@ -32,8 +32,8 @@ with np.load(train_path) as data:
       labels_train = data['labels_y']
 
 with np.load(test_path) as data:
-      data_test = data['data_x']
-      labels_test = data['labels_y']
+      data_validate = data['data_x']
+      labels_validate = data['labels_y']
 
 def basemodel_deepbugs():
   model = Sequential()
@@ -60,7 +60,7 @@ model.compile(loss='binary_crossentropy',
               metrics=['accuracy'])
 
 model_mdata = model.fit(data_train, labels_train, 
-       validation_data=(data_test, labels_test), 
+       validation_data=(data_validate, labels_validate), 
        epochs=10, batch_size=100, shuffle=True)
 
 # it smol
