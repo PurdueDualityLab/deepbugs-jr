@@ -36,9 +36,9 @@ with np.load(train_path) as data:
 # break up data
 # paper says 100k files train and 50k test, but all we got are json
 train_p = 2/3 
-rng = np.random.default_rng()
-rng.shuffle(x_data, axis = 0)
-rng.shuffle(y_data, axis = 0) 
+#rng = np.random.default_rng()
+#rng.shuffle(x_data, axis = 0)
+#rng.shuffle(y_data, axis = 0) 
 from math import ceil
 train_data_x = x_data[:ceil(len(x_data)*train_p)]
 train_data_y = y_data[:ceil(len(y_data)*train_p)]
