@@ -63,13 +63,9 @@ model_mdata = model.fit(data_train, labels_train,
        validation_data=(data_test, labels_test), 
        epochs=10, batch_size=100, shuffle=True)
 
-
-model.save('../deepbug_model.keras')
+# it smol
+model.save('deepbug_model.keras')
 #model = keras.models.load_model("deepbug_model.keras")
-
-# This is a way to gain statistics on the model
-#model_mdata = model.evaluate(data_test, labels_test)
-
 
 ## This stuff prints models. But the code is deprecated
 #
