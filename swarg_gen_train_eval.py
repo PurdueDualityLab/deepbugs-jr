@@ -10,7 +10,7 @@ import json
 import numpy as np
 from tqdm import tqdm
 
-def gen_good_bad_fn_args (all_asts_filepath:str, token2vec_filepath: str, save_to_filepath:str="") -> Tuple[List,List]:
+def gen_good_bad_fn_args (all_asts_filepath:str, token2vec_filepath:str, save_to_filepath:str = "") -> Tuple[List,List]:
     """Given a file that has one AST per line, extracts all function calls and makes switch-arg training data.
 
     Optionally saves to a ".npz" file with keys "data_x" and "labels_y".
@@ -78,13 +78,13 @@ if __name__ == "__main__":
     TOKEN2VEC_PATH = "data/ast_for_realdeal/token_to_vector.json"
     
     # These files contain one AST (each AST is a list of JSON nodes) per line
-    TRAIN_AST_PATH = "../Big, Ugly Data/programs_training.json"
-    EVAL_AST_PATH = "../Big, Ugly Data/programs_eval.json"
+    TRAIN_AST_PATH = "../programs_training.json"
+    EVAL_AST_PATH = "../programs_eval.json"
 
     # These .npz files can be opened using np.load(). Keys are data_x and labels_y
     # See https://www.tensorflow.org/tutorials/load_data/numpy for easy walkthrough on using w Keras
-    OUTPUT_TRAIN_PATH = "swarg_training_data.npz"
-    OUTPUT_EVAL_PATH = "swarg_eval_data.npz"
+    OUTPUT_TRAIN_PATH = "../swarg_training_data.npz"
+    OUTPUT_EVAL_PATH = "../swarg_eval_data.npz"
 
     # Save the two .npz files
     gen_good_bad_fn_args(TRAIN_AST_PATH, TOKEN2VEC_PATH, OUTPUT_TRAIN_PATH)
