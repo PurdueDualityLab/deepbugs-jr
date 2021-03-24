@@ -24,17 +24,6 @@ from keras.wrappers.scikit_learn import KerasClassifier
 
 import numpy as np
 
-train_path = '../swarg_training_data.npz'
-test_path = '../swarg_eval_data.npz'
-
-with np.load(train_path) as data:
-      data_train = data['data_x']
-      labels_train = data['labels_y']
-
-with np.load(test_path) as data:
-      data_test = data['data_x']
-      labels_test = data['labels_y']
-
 def basemodel_deepbugs():
   model = Sequential()
 
@@ -54,41 +43,3 @@ def basemodel_deepbugs():
 
 model = basemodel_deepbugs()
 
-#Compile the model using binary_cross loss function and rmsprop optim
-model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop', 
-              metrics=['accuracy'])
-
-model_mdata = model.fit(data_train, labels_train, 
-       validation_data=(data_test, labels_test), 
-       epochs=10, batch_size=100, shuffle=True)
-
-
-model.save('../deepbug_model.keras')
-#model = keras.models.load_model("deepbug_model.keras")
-
-# This is a way to gain statistics on the model
-#model_mdata = model.evaluate(data_test, labels_test)
-
-
-## This stuff prints models. But the code is deprecated
-#
-#import matplotlib.pyplot as plt
-## Plot accuracy vs epoch
-#plt.plot(model_mdata['accuracy'])
-#plt.plot(model_mdata['val_accuracy'])
-#plt.title('Model Accuracy vs. Epoch')
-#plt.ylabel('Model Accuracy')
-#plt.xlabel('Epoch')
-#plt.legend(['train', 'test'], loc='upper left')
-#plt.show()
-#
-## Plot accuracy vs epoch
-#plt.plot(model_mdata.history['loss'])
-#plt.plot(model_mdata.history['val_loss'])
-#plt.title('Model loss vs. Epoch')
-#plt.ylabel('Model loss')
-#plt.xlabel('Epoch')
-#plt.legend(['train', 'test'], loc='upper left')
-#plt.show()
-#
