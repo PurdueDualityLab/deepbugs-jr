@@ -64,9 +64,8 @@ model_mdata = model.fit(data_train, labels_train,
        epochs=10, batch_size=100, shuffle=True)
 
 
-#model.save('../deep_bug_model.h5')
-model.save('deepbug_model.keras')
-model = keras.models.load_model("deepbug_model.keras")
+model.save('../deepbug_model.keras')
+#model = keras.models.load_model("deepbug_model.keras")
 
 # This is a way to gain statistics on the model
 #model_mdata = model.evaluate(data_test, labels_test)
