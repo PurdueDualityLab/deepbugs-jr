@@ -27,13 +27,29 @@ import numpy as np
 train_path = '../swarg_training_data.npz'
 test_path = '../swarg_eval_data.npz'
 
+# load up data
 with np.load(train_path) as data:
-      data_train = data['data_x']
-      labels_train = data['labels_y']
+      x_data = data['data_x']
+      y_data = data['labels_y']
+
+
+# break up data
+# paper says 100k files train and 50k test, but all we got are json
+train_p = 2/3 
+rng = np.random.default_rng()
+rng.shuffle(x_data, axis = 0)
+rng.shuffle(y_data, axis = 0) 
+from math import ceil
+train_data_x = x_data[:ceil(len(x_data)*train_p)]
+train_data_y = y_data[:ceil(len(y_data)*train_p)]
+val_data_x = x_data[ceil(len(x_data)*train_p):]
+val_data_y = y_data[ceil(len(y_data)*train_p):]
+
+#print(len(x_data) == len(train_data_x) + len(val_data_x))
 
 with np.load(test_path) as data:
-      data_validate = data['data_x']
-      labels_validate = data['labels_y']
+      data_test = data['data_x']
+      labels_test = data['labels_y']
 
 def basemodel_deepbugs():
   model = Sequential()
@@ -59,14 +75,17 @@ model.compile(loss='binary_crossentropy',
               optimizer='rmsprop', 
               metrics=['accuracy'])
 
-model_mdata = model.fit(data_train, labels_train, 
-       validation_data=(data_validate, labels_validate), 
+model_mdata = model.fit(train_data_x, train_data_y, 
+       validation_data=(val_data_x, val_data_y), 
        epochs=10, batch_size=100, shuffle=True)
 
 # it smol
 model.save('deepbug_model.keras')
-#model = keras.models.load_model("deepbug_model.keras")
 
+#model = keras.models.load_model("deepbug_model.keras")
+#
+#model_mdata = model.evaluate(data_test, labels_test)
+#print(model_mdata)
 ## This stuff prints models. But the code is deprecated
 #
 #import matplotlib.pyplot as plt
