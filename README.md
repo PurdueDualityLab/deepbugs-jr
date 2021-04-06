@@ -1,3 +1,11 @@
-# Replication of DeepBugs
+# DeepBugs Replication
 
-Normally, we'd have lots of cool stuff to say here.  But this ain't that kind of movie.
+## Approach
+
+```mermaid
+graph LR
+    code_corpus[Code Corpus] --> ast[AST Tokenizer]
+    ast --> tokens[Tokens]
+    tokens --> Word2Vec
+    Word2Vec --> Tensorflow
+```
