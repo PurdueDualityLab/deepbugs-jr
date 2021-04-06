@@ -28,23 +28,26 @@ def get_all_2_arg_fn_calls_from_ast(ast: list)->list:
     all_fn_calls = []
 
     for node in ast:
-        if node["type"] == "CallExpression":
-            if len(node["children"]) == 3: # fn_name, arg1, arg2
-                fn_name = get_fn_name(node["children"][0], ast)
-                arg1 = get_arg(node["children"][1], ast)
-                arg2 = get_arg(node["children"][2], ast)
+        try: # Just in case something is not a node and gets read in
+            if node["type"] == "CallExpression":
+                if len(node["children"]) == 3: # fn_name, arg1, arg2
+                    fn_name = get_fn_name(node["children"][0], ast)
+                    arg1 = get_arg(node["children"][1], ast)
+                    arg2 = get_arg(node["children"][2], ast)
 
-                # Ignore this one, fn call should be yeeted
-                if fn_name is None or arg1 is None or arg2 is None:
-                    continue
+                    # Ignore this one, fn call should be yeeted
+                    if fn_name is None or arg1 is None or arg2 is None:
+                        continue
 
-                fn_call = {
-                    "fn_name": fn_name,
-                    "arg1": arg1,
-                    "arg2": arg2
-                }
+                    fn_call = {
+                        "fn_name": fn_name,
+                        "arg1": arg1,
+                        "arg2": arg2
+                    }
 
-                all_fn_calls.append(fn_call)
+                    all_fn_calls.append(fn_call)
+        except:
+            pass
     
     return all_fn_calls
 
