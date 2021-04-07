@@ -1,5 +1,6 @@
 from ast_token_extractor import ast2id_or_lit
 from gensim.models import Word2Vec
+from gensim.test.utils import common_texts
 import json
 import time
 import math
@@ -37,7 +38,6 @@ def main():
         if l :
             tokens.append([l])
         
-    from gensim.test.utils import common_texts
     #print(type(common_texts))
     #print(tokens[0:50])
     model = Word2Vec(sentences=tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
@@ -57,4 +57,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    #main()
+    a = 1
