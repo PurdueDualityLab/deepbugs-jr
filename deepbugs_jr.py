@@ -1,5 +1,7 @@
+import keras
 from ast_token_extractor import ast2id_or_lit
 from gensim.models import Word2Vec
+from gensim.test.utils import common_texts
 import json
 import time
 import math
@@ -37,18 +39,21 @@ def main():
         if l :
             tokens.append([l])
         
-    from gensim.test.utils import common_texts
     #print(type(common_texts))
     #print(tokens[0:50])
-    model = Word2Vec(sentences=tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
-
+    #model = Word2Vec(sentences=tokens, min_count=3, window=5, vector_size=150, workers=40, epochs=15, alpha=0.1, sg=0)
+    model = Word2Vec.load("word2vec.model")
+    #print(help(model))
+    #print(model.wv.key_to_index)
+    #print(help(model.wv.key_to_index))
     timestamp = math.floor(time.time() * 1000)
     model.save("embedding_model_" + str(timestamp))
 
     token_to_vector = dict()
-    for token in model.wv.vocab:
-        if token.startswith("ID:") or token.startswith("LIT:"):
-            vector = model[token].tolist()
+    for token in model.wv.key_to_index : 
+        if token != None and (token.startswith("ID:") or token.startswith("LIT:")):
+            #print(token)
+            vector = model.wv.get_vector(token).tolist() # model is no longer easily subscriptable
             token_to_vector[token] = vector
     token_to_vector_file_name = "token_to_vector_" + str(timestamp) + ".json"
     with open(token_to_vector_file_name, "w") as file:
@@ -58,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    #a=1
