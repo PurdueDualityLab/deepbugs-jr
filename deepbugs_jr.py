@@ -1,4 +1,3 @@
-import keras
 from ast_token_extractor import ast2id_or_lit
 from gensim.models import Word2Vec
 from gensim.test.utils import common_texts
