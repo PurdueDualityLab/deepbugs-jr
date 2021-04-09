@@ -13,7 +13,7 @@ Add info about specific dependencies and tools used (Python, Tensorflow, Github)
 gantt
     title DeepBugs Replication
         dateFormat YYYY-MM-DD
-        excludes weekends
+        excludes weekend
         section Prep Tokens
             Setup Automated Test Pipeline with Github CI       :done, p1, 2021-02-26, 6d
             Prepare Code Corpus                                :done, p2, 2021-02-28, 3d 
