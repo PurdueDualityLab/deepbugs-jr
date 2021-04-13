@@ -5,8 +5,6 @@ import time
 import math
 import sys
 
-# from HyperParameters import name_embedding_size
-
 def convert_to_ast(lines):
     file_str = ''
         
@@ -21,30 +19,34 @@ def convert_to_ast(lines):
 
     return tokens
 
-def main():
-    tokens = [] 
-    for i in range(10):
-        File = open(f"data/ast_for_prototyping/ast_{i}.json",'r')
-        lines = File.readlines()
-        File.close()
-        tokens += convert_to_ast(lines)
-        #print(tokens[:])
 
-    # Filter out None, and put each token in a list
+def filter_token_list(tokens):
     a = tokens[:]
     tokens = []
     for l in a :
         if l :
             tokens.append([l])
-        
-    from gensim.test.utils import common_texts
-    #print(type(common_texts))
-    #print(tokens[0:50])
+    return tokens
+
+
+def main():
+    tokens = [] 
+    for i in range(10):
+        File = open(f"..\programs_training.json",'r', encoding="latin1")
+        lines = File.readlines()
+        File.close()
+        tokens += convert_to_ast(lines)
+"""
+    # Clean out None from list
+    filter_token_list(tokens)
+
+    # Run Word2Vec using CBOW parameters
     model = Word2Vec(sentences=tokens, min_count=3, window=5, size=150, workers=40, iter=15, alpha=0.1, sg=0)
 
     timestamp = math.floor(time.time() * 1000)
     model.save("embedding_model_" + str(timestamp))
 
+    # Save vectors for to file 
     token_to_vector = dict()
     for token in model.wv.vocab:
         if token.startswith("ID:") or token.startswith("LIT:"):
@@ -53,7 +55,7 @@ def main():
     token_to_vector_file_name = "token_to_vector_" + str(timestamp) + ".json"
     with open(token_to_vector_file_name, "w") as file:
         json.dump(token_to_vector, file, sort_keys=True, indent=4)
-
+"""
 
 
 if __name__ == "__main__":
