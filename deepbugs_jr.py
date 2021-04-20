@@ -6,8 +6,6 @@ import time
 import math
 import sys
 
-# from HyperParameters import name_embedding_size
-
 def convert_to_ast(lines):
     file_str = ''
         
@@ -22,14 +20,27 @@ def convert_to_ast(lines):
 
     return tokens
 
+
+def filter_token_list(tokens):
+    a = tokens[:]
+    tokens = []
+    for l in a :
+        if l :
+            tokens.append([l])
+    return tokens
+
+
 def main():
     tokens = [] 
     for i in range(10):
-        File = open(f"data/ast_for_prototyping/ast_{i}.json",'r')
+        File = open(f"..\programs_training.json",'r', encoding="latin1")
         lines = File.readlines()
         File.close()
         tokens += convert_to_ast(lines)
-        #print(tokens[:])
+"""
+    # Clean out None from list
+    filter_token_list(tokens)
+
 
     # Filter out None, and put each token in a list
     a = tokens[:]
@@ -45,9 +56,11 @@ def main():
     #print(help(model))
     #print(model.wv.key_to_index)
     #print(help(model.wv.key_to_index))
+
     timestamp = math.floor(time.time() * 1000)
     model.save("embedding_model_" + str(timestamp))
 
+    # Save vectors for to file 
     token_to_vector = dict()
     for token in model.wv.key_to_index : 
         if token != None and (token.startswith("ID:") or token.startswith("LIT:")):
@@ -57,7 +70,7 @@ def main():
     token_to_vector_file_name = "token_to_vector_" + str(timestamp) + ".json"
     with open(token_to_vector_file_name, "w") as file:
         json.dump(token_to_vector, file, sort_keys=True, indent=4)
-
+"""
 
 
 if __name__ == "__main__":
