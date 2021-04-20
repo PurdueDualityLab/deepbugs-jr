@@ -121,18 +121,4 @@ graph TD
 + Dropout
 + KerasClassifier
 
-## Dependencies
-### Python Modules
-+ ast2id_or_lit
-+ word2vec
-+ json
-+ numpy
-+ math
-+ unittest
-+ keras
-+ Sequential
-+ Dense
-+ Dropout
-+ KerasClassifier
-
 ## References
