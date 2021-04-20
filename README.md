@@ -31,6 +31,8 @@ graph TD
     T --> PT[Perform Training]
     PT --> TM[Run on Test Set]
     DR --> R
+    R --> RS[Report Sections]
+    RS --> A[Collect Artifacts]
 ```
 
 ### Work Schedule
