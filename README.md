@@ -60,7 +60,7 @@ gantt
 ```
 
 ### Code Corpus
-The original Deepbugs study produced a code corpus which we made use of in our reproduction study. [It](https://www.sri.inf.ethz.ch/js150) contains over 100,000 javascript source files and their corresponding AST source files.
+The original Deepbugs study produced a [code corpus](https://www.sri.inf.ethz.ch/js150) which we made use of in our reproduction study. [It] contains over 100,000 javascript source files and their corresponding AST source files.
 
 ### AST Tokens & Word2Vec
 ```mermaid
