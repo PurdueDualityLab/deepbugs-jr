@@ -17,10 +17,17 @@ graph TD
     R[Write the Report]
 
     DR --> CC
-    CC --> CI[Setup Github CI]  --> EX[Extract Tokens from Code Corpus]
-    DR --> WV --> AST[Identify AST Extractor] --> CT[Tokenize AST]
-    DR --> NN --> ID[Identify Layers for NN] --> BN[Build NN w/ Keras]
-    DR --> T --> PT[Perform Training] --> TM[Run on Test Set]
+    CC --> CI[Setup Github CI]
+    CI --> EX[Extract Tokens from Code Corpus]
+    DR --> WV 
+    WV --> AST[Identify AST Extractor] 
+    AST --> CT[Tokenize AST]
+    DR --> NN
+    NN --> ID[Identify Layers for NN]
+    ID --> BN[Build NN w/ Keras]
+    DR --> T 
+    T --> PT[Perform Training]
+    PT --> TM[Run on Test Set]
     DR --> R
 ```
 
@@ -103,6 +110,20 @@ graph TD
 
 ## Dependencies
 ### Python Modules
++ word2vec
++ json
++ numpy
++ math
++ unittest
++ keras
++ Sequential
++ Dense
++ Dropout
++ KerasClassifier
+
+## Dependencies
+### Python Modules
++ ast2id_or_lit
 + word2vec
 + json
 + numpy
