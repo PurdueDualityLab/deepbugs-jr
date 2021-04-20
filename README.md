@@ -49,6 +49,7 @@ gantt
 ```
 
 ### Code Corpus
+The original Deepbugs study produced a code corpus which we made use of in our reproduction study. [It](https://www.sri.inf.ethz.ch/js150) contains over 100,000 javascript source files and their corresponding AST source files.
 
 ### AST Tokens & Word2Vec
 ```mermaid
@@ -94,13 +95,14 @@ graph TD
         dropoutB --> denseB
     end
 ```
-*Depiction of DL layers*
 
 ## Usage
+1. Obtain AST values of javascript source files
+2. Vectorize the AST values using the deepbugs_jr.py
+3. Create the neural network model using the nn_trainer.py
 
 ## Dependencies
 ### Python Modules
-+ ast2id_or_lit
 + word2vec
 + json
 + numpy
