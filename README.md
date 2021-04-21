@@ -107,6 +107,9 @@ graph TD
     end
 ```
 
+#### Dropout-A
+*Description goes here*
+
 ## Usage
 1. Obtain AST values of javascript source files
 2. Vectorize the AST values using the deepbugs_jr.py
