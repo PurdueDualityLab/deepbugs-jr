@@ -117,15 +117,12 @@ graph TD
 
 ## Dependencies
 ### Python Modules
++ tensorflow
++ keras
 + word2vec
 + json
 + numpy
-+ math
 + unittest
-+ keras
-+ Sequential
-+ Dense
-+ Dropout
 + KerasClassifier
 
 ## References
