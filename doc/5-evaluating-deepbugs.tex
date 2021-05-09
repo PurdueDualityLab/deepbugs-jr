@@ -1,0 +1,66 @@
+\section{Comparing with the Original}
+\label{sec:evaluating-deepbugs}
+
+Like the original authors, we evaluate our replicated DeepBugs using switched-argument bugs identified in the 150k JavaScript Dataset \cite{raychev_learning_2016}. The dataset is already partitioned into training and evaluation categories.
+
+First, we extract every 2-argument function call group from the ASTs generated for the dataset. Specifically, we extract every function call that fits either of the following patterns:
+
+\begin{itemize}
+    \item \texttt{functionName(arg1, arg)}
+    \item \texttt{objectName.methodName(arg1, arg2)}
+\end{itemize}
+
+Note that in the second pattern, the function name is extracted for \texttt{methodName}, not \texttt{objectName.methodName}. Attempting to vectorize \texttt{objectName.methodName} would produce two vectors instead of one, because Word2Vec would need to vectorize \texttt{objectName} and \texttt{methodName} separately. The neural network has a fixed input size, so we must ensure that every extracted sample produces exactly three vectors, instead of a mix of three- and four-vector samples.
+
+For every 2-argument function call we extract, we assume that the argument ordering is correct. Thus, the extracted function calls comprise our positive data samples. We make that assumption because the 150k JavaScript dataset is built using code from various public, open-source projects, so the source code is less likely to be buggy.
+
+To create negative data samples, we simply switch the order of the \texttt{(arg1, arg2)} for all extracted 2-argument function calls. Thus, our training and testing data is comprised of 2$\times$ the number of extracted samples:
+
+\begin{itemize}
+    \item \texttt{functionName(arg1, arg2)} - POSITIVE
+    \item \texttt{functionName(arg2, arg1)} - NEGATIVE
+    \item \texttt{objectName.methodName(arg1, arg2)} - POSITIVE
+    \item \texttt{objectName.methodName(arg2, arg1)} - NEGATIVE
+\end{itemize}
+
+Each data sample is then vectorized using the following procedure. Via the AST-to-Token method described in Step 2 (Sec. \ref{subsec:step-2}), we convert each data sample into a tuple of three tokens (e.g., \texttt{(``ID:functionName'', ``ID:someParam'',  ``LIT:true'')}). Each of the three tokens is individually vectorized using the Word2Vec model we trained in Step 3 (Sec. \ref{subsec:step-3}). The final, classifier-ready sample is comprised of the three vectors, concatenated into a larger vector.
+
+To train our DeepBugs classifier from Step 4 (Sec. \ref{subsec:step-4}), we use the vectorized data samples from the 150k JavaScript dataset's training partition. Training is completed rapidly (10 epochs, batch size 100, RMSprop optimizer with binary cross-entropy loss).
+
+As shown in Tab. \ref{tab:deepbugs-comparison}, our results are very similar to those reported by the original authors. We compare multiple aspects of the replication with the original.
+
+\begin{table}[h]
+\begin{tabular}{|c|l|l|}
+\hline
+\multicolumn{1}{|l|}{\textbf{Step}} & \textbf{Comparison Metric} & \textbf{Original VS Replication}                                                \\ \hline
+\multirow{2}{*}{1 \& 2}             & Token vocabulary size     & Same: 9,994 VS 9,994                                                            \\ \cline{2-3} 
+                                    & Extracted token values     & Identical                                                                       \\ \hline
+3                                   & Generated vectors & \begin{tabular}[c]{@{}l@{}}Different\\ (authors did not provide\\ the seed)\end{tabular} \\ \hline
+\multirow{2}{*}{4}                  & Training Loss              & Close: $\sim$0.002 VS $\sim$0.002                                               \\ \cline{2-3} 
+                                    & Test Error                 & Close: $\sim$0.04 VS $\sim$0.06                                                       \\ \hline
+\end{tabular}
+\caption{On the switched-argument case from the 150k JavaScript Dataset, our DeepBugs
+replication successfully captured similar performance to the original authors' work.}
+\label{tab:deepbugs-comparison}
+\end{table}
+
+There are a few differences between our replication and the original, however. In the original paper, the authors claim to use a vocabulary size of 10,000 unique tokens. In actuality, the Word2Vec model they provide and the model we train both retrieve the same 9,994 tokens. We believe that this difference was merely because of rounding up the number. However, there are no significant implications of this. The vectors generated are also different; the original authors do not provide their random seed for their Word2Vec model. We verify that their method works by using the vectors as input to our DeepBugs model, hence we confirm that not having the exact same seed for the vector generation does not have significant impact on our results compared to the original author's work. Our model flags many of the bugs that the original authors' did. Our accuracy is not exactly the same; although our training loss drops to roughly 0.002, like their model, our model performs with 2\% worse accuracy.
+
+Because our work is a replication, we do not reuse artifacts generated by the original authors. Our implementations are based on our understanding of the authors' instructions in their paper. The DeepBugs authors wrote most of their code in JavaScript, while our work exclusively uses Python. We use the same dataset to verify the authors' results. A comparison between our and the authors' implementations are shown in Tab. \ref{tab:replication-discussion}.
+
+\begin{table}[]
+\begin{tabular}{|r|l|}
+\hline
+\textbf{\begin{tabular}[c]{@{}r@{}}DeepBugs\\ Component\end{tabular}} & \textbf{Replication VS Original Authors}                                                                                                                                            \\ \hline
+Code-to-AST                                                           & \begin{tabular}[c]{@{}l@{}}-Both use Acorn to generate ASTs\\ -Beyond that, we reimplement\\ everything in Python using our\\ own logic\end{tabular}                                \\ \hline
+AST-to-Token                                                          & \begin{tabular}[c]{@{}l@{}}-We implement everything in Python\\ from scratch\end{tabular}                                                                                           \\ \hline
+Token-to-Vector                                                       & \begin{tabular}[c]{@{}l@{}}-Both use the Gensim language framework\\ -We implement everything in Python\\ from scratch\end{tabular}                                                 \\ \hline
+Bug Classifier                                                        & \begin{tabular}[c]{@{}l@{}}-Both use Tensorflow/Keras\\ -We implement everything in Python\\ from scratch\\ -We train the model ourselves\end{tabular}                              \\ \hline
+Dataset                                                               & \begin{tabular}[c]{@{}l@{}}-Both use the 150k JavaScript Dataset\\ -Our scripts to prepare the dataset for\\ classification are reimplemented in\\ Python from scratch\end{tabular} \\ \hline
+\end{tabular}
+
+\caption{Our replication uses the same dataset and a few of the same third-party libraries as the original authors, but we implement everything else from scratch based on the instructions from the paper. We do not use any artifacts produced by the original authors.}
+\label{tab:replication-discussion}
+\end{table}
+
+Because our results are very similar and were produced using artifacts that we generated ourselves, we are confident that the DeepBugs paper's results are valid; our replication is successful.
