@@ -2,44 +2,49 @@ name: github-ci
 on: [push]
 jobs:
 
-  build_main:
+#  build_main:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - run: pip3 install gensim
+#      - run: python3 deepbugs_jr.py
+  build_parser :
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: pip3 install gensim
-      - run: python3 deepbugs_jr.py
+      - run: python3 parser.py example-program.c
 
-  build_extract_token_from_ast_node:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip install gensim mypy
-      - run: mypy ast_token_extractor.py
-      - run: python3 ast_token_extractor.py
-      
-  build_swarg_fnarg_extract:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip3 install mypy
-      - run: mypy swarg_fnargs2tokens.py
-      - run: python3 swarg_fnargs2tokens.py
-      
-  build_tokens_popularity:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      #- run: mypy 
-      #- run: python3 
-  build_NN: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip3 install tensorflow keras
-      - run: python3 NN_basemodel.py
-  test_main:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: pip3 install gensim tqdm
-      - run: python3 -m unittest
+#  build_extract_token_from_ast_node:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - run: pip install gensim mypy
+#      - run: mypy ast_token_extractor.py
+#      - run: python3 ast_token_extractor.py
+#      
+#  build_swarg_fnarg_extract:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - run: pip3 install mypy
+#      - run: mypy swarg_fnargs2tokens.py
+#      - run: python3 swarg_fnargs2tokens.py
+#      
+#  build_tokens_popularity:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      #- run: mypy 
+#      #- run: python3 
+#  build_NN: 
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - run: pip3 install tensorflow keras
+#      - run: python3 NN_basemodel.py
+##  test_main:
+##    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - run: pip3 install gensim tqdm
+#      - run: python3 -m unittest
