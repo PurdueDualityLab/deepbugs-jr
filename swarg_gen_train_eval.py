@@ -10,7 +10,7 @@ import json
 import numpy as np
 from tqdm import tqdm
 
-def gen_good_bad_fn_args (all_asts_filepath:str, token2vec_filepath:str, save_to_filepath:str = "") -> Tuple[List,List]:
+def gen_good_bad_fn_args (all_asts_filepath:str, token2vec_filepath: str, save_to_filepath:str="") -> Tuple[List,List]:
     """Given a file that has one AST per line, extracts all function calls and makes switch-arg training data.
 
     Optionally saves to a ".npz" file with keys "data_x" and "labels_y".
@@ -65,6 +65,8 @@ def gen_good_bad_fn_args (all_asts_filepath:str, token2vec_filepath:str, save_to
 
     # Save using keys "data_x" and "labels_y"
     if save_to_filepath != "":
+        #print("data_x: "+str(data_x.shape))
+        #print("data_y: "+str(labels_y.shape))
         np.savez(save_to_filepath, data_x=data_x, labels_y=labels_y)
     
     return data_x, labels_y
@@ -75,7 +77,7 @@ if __name__ == "__main__":
     # NOTE: Took about 13 minutes.
 
     # This json file is in the format {"LIT:something": [...vector], "ID:someotherthing": [...vector], ...}
-    TOKEN2VEC_PATH = "data/ast_for_realdeal/token_to_vector.json"
+    TOKEN2VEC_PATH = "our_trained_token2vec.json"
     
     # These files contain one AST (each AST is a list of JSON nodes) per line
     TRAIN_AST_PATH = "../programs_training.json"
@@ -87,5 +89,5 @@ if __name__ == "__main__":
     OUTPUT_EVAL_PATH = "../swarg_eval_data.npz"
 
     # Save the two .npz files
-    gen_good_bad_fn_args(TRAIN_AST_PATH, TOKEN2VEC_PATH, OUTPUT_TRAIN_PATH)
+    #gen_good_bad_fn_args(TRAIN_AST_PATH, TOKEN2VEC_PATH, OUTPUT_TRAIN_PATH)
     gen_good_bad_fn_args(EVAL_AST_PATH, TOKEN2VEC_PATH, OUTPUT_EVAL_PATH)
