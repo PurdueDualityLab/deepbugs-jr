@@ -33,7 +33,7 @@ def filter_token_list(tokens):
 def main():
     tokens = [] 
     for i in range(10):
-        File = open(f"..\programs_training.json",'r', encoding="latin1")
+        File = open(f"demo_data/150k_training.json",'r', encoding="latin1")
         lines = File.readlines()
         File.close()
         tokens += convert_to_ast(lines)
