@@ -1,3 +1,6 @@
+import json
+
+from tqdm import tqdm
 # part 1
 """
 Given any AST node as a JSON string, extract the token and return a string. This token is what will get passed through Word2Vec to become a vector.
@@ -35,6 +38,48 @@ def ast2id_or_lit (node:dict) -> Union[str,None]:
 
     # else
     return None
+
+def get_all_tokens_from(ast, remove_none=True):
+    """Extracts all tokens from a single AST in JSON format.
+
+    Args:
+        ast (list): The AST, as a list of dictionaries, each entry corresponding to a node.
+        remove_none (bool, optional): If True, removes all `None` tokens, and leaves them in otherwise. Defaults to True.
+
+    Returns:
+        list: A list of all tokens extracted from this AST.
+    """
+    all_tokens = []
+    for node in ast:
+        try:
+            token = ast2id_or_lit(node)
+            if remove_none and token is None:
+                continue
+            all_tokens.append(token)
+        except:
+            pass
+    
+    return all_tokens
+
+def get_tokens_from_corpus(all_asts_filepath:str, remove_none=True):
+    """Given a file that contains one source file AST JSON per line, extracts all tokens.
+
+    Args:
+        all_asts_filepath (str): Filepath to a file that contains one source file AST JSON per line.
+        remove_none (bool, optional): If True, removes all `None` tokens, and leaves them in otherwise. Defaults to True.
+
+    Returns:
+        list: A list, where each entry is the list of tokens extracted from one source file AST.
+    """
+    list_of_lists_of_tokens = []
+    with open(all_asts_filepath, errors="ignore") as all_asts_fp:
+        for ast_line in tqdm(all_asts_fp): # Iterate over all lines in file
+            ast = json.loads(ast_line) # Each line contains a new AST
+            all_tokens = get_all_tokens_from(ast, remove_none) # Collect all tokens from the AST, in order of appearance
+            list_of_lists_of_tokens.append(all_tokens) # Append all tokens, creating a large list
+
+    return list_of_lists_of_tokens
+
 
 
 # oops, thought we were reading default acorn parsed output
