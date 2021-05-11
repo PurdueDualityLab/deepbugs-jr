@@ -11,9 +11,9 @@ def get_file(filename) :
 
     return File
 
-
 # boolean functions and facts
 # {{{
+# is fragment (non-look-ahead scan element)
 is_frag = {}
 def fragment(name :str,  expr :str) :
     "name of fragment, expression"
@@ -41,13 +41,15 @@ is_digit = fragment('digit',
 is_digitdot = fragment('digitdot',
                        '0123456789.')
 
-def is_int(string) -> bool:
+def is_int(string:str) -> bool:
+    "int literal default found in C-like languages"
     for ch in string :
         if not is_digit(ch) :
             return False
     return True
 
 def is_decimal(string) -> bool:
+    "float literal default found in C-like languages"
     if not is_digit(string[0]) :
         return False
     for ch in string :
@@ -79,30 +81,39 @@ ckeywords.append('main')
    
 # clean up code
 # {{{
-def remove_single_comments_c(string) :
-    """ remove C comments
-    """
-    i = 0
-    while i < len(string) :
-        if string[i:i+2] == '//' : # skipping single line 
-            j = i
-            while string[j] != '\n' and j < len(string):
-                j += 1
-            string = string[0:i] + string[j:]
-        i += 1
-            
-    return string
+# 
+def remove_single_comments(trigger) :
+    " many comments are single char triggers"
+    def f (string) :
+        i = 0
+        while i < len(string) :
+            if string[i:i+len(trigger)] == trigger : # skipping single line 
+                j = i
+                while string[j] != '\n' and j < len(string):
+                    j += 1
+                string = string[0:i] + string[j:]
+            i += 1
+                
+        return string
+    return f
 
-def remove_multi_comments_c(string) :
-    i = 0
-    while i < len(string) :
-        if string[i:i+2] == '/*' : # skipping single line 
-            j = i
-            while string[j:j+2] != '*/' and j < len(string):
-                j += 1
-            string = string[0:i] + string[j+2:]
-        i += 1
-    return string
+def remove_multi_comments(start,end) :
+    
+    def f (string) :
+        i = 0
+        while i < len(string) :
+            if string[i:i+len(start)] == start : # skipping single line 
+                j = i
+                while string[j:j+len(end)] != end and j < len(string):
+                    j += 1
+                string = string[0:i] + string[j+2:]
+            i += 1
+        return string
+    return f
+
+# these names are kind of tedious
+remove_single_comments_c = remove_single_comments('//')
+remove_multi_comments_c = remove_multi_comments('/*','*/')
 
 def remove_extra_whitespace(string) :
     string = string.replace('\r','')
@@ -114,7 +125,7 @@ def remove_extra_whitespace(string) :
 # tokenizing
 # {{{
 def str_to_tokens(string : str) -> list :
-    "the design of this is to treat characters like tokens if they are not part of the token list"
+    """the design of this is to treat characters like tokens if they are not part of the token list"""
 
     def identifier(tokens, i) :
         "C lang identifiers"
@@ -168,10 +179,8 @@ def str_to_tokens(string : str) -> list :
 
 # parsing
 # {{{
-#
-#
 def id_tree(tokens:list) :
-    "Add numbers "
+    "Add numbers, for referencing by other nodes"
     marked_tokens = []
     i = 0
     for e in tokens :
@@ -181,13 +190,14 @@ def id_tree(tokens:list) :
     return marked_tokens
 
 def name_tree(exclude_keywords) :
-
+    "tag identifier, if it is not a keyword"
+        
     def f (tokens) :
         
         for i in range(len(tokens)) :
             if ((not tokens[i]['value'] in exclude_keywords) and
                (is_c_identifier(tokens[i]['value']))) :
-                tokens[i]['name'] = tokens[i]['value']
+                tokens[i]['type'] = 'Identifier'
         
         return tokens
         
@@ -195,30 +205,40 @@ def name_tree(exclude_keywords) :
                 
 c_name_tree = name_tree(ckeywords)
 
-def typedef_tree(type_name) :
-    
-    def f (tokens) :
-        # iterate over syntax
-        for i in range(len(tokens[:-len('si{};')])) :
-            # grammar spec
-            if (type_name in tokens[i  ]['value'] and
-                '{'       in tokens[i+2]['value']) :
-
-                # need to copy only on complete grammar
-                temp = {}
-                temp['type'] = type_name
-                #tokens[i]['type'] = type_name 
-
-                # body
-                tempbody = []
-                #tokens[i]['children'] = []
-                j = i+3
-                while  j < len(tokens) and tokens[j]['value'] != '}' :
-                    tokens[i]['children'].append(tokens[j]['id'])
-                    j += 1
-
+def c_literal_tree(tokens) : # note: not literally a tree
+        
+        for i in range(len(tokens)) :
+            if (is_int(tokens[i]['value']) or 
+                is_digit(tokens[i]['value'])) :
+                tokens[i]['type'] = 'Literal'
+        
         return tokens
-    return f
+        
+
+#def typedef_tree(type_name) :
+#    
+#    def f (tokens) :
+#        # iterate over syntax
+#        for i in range(len(tokens[:-len('si{};')])) :
+#            # grammar spec
+#            if (type_name in tokens[i  ]['value'] and
+#                '{'       in tokens[i+2]['value']) :
+#
+#                # need to copy only on complete grammar
+#                temp = {}
+#                temp['type'] = type_name
+#                #tokens[i]['type'] = type_name 
+#
+#                # body
+#                tempbody = []
+#                #tokens[i]['children'] = []
+#                j = i+3
+#                while  j < len(tokens) and tokens[j]['value'] != '}' :
+#                    tokens[i]['children'].append(tokens[j]['id'])
+#                    j += 1
+#
+#        return tokens
+#    return f
        
 
 ## make more syntax trees
@@ -227,19 +247,20 @@ def typedef_tree(type_name) :
 #for prime in ['char','int','float','double','_Bool','struct','union'] :
 #    tree.update({ prime : typeinit_tree(prime) })
 ## declaring stuff
-union_tree = typedef_tree('union')
-struct_tree = typedef_tree('struct')
+#union_tree = typedef_tree('union')
+#struct_tree = typedef_tree('struct')
 #dot_tree = relation_tree('.')
 #comma_tree = relation_tree(',')
 #plus_tree = relation_tree('+')
 #assign_tree = relation_tree('=')
 
-def parse(tokens) :
+def parse_c(tokens) :
     "tokens to trees"
 
     t = str_to_tokens(tokens)
     t = id_tree(t)
     t = c_name_tree(t)
+    t = c_literal_tree(t)
     #t = struct_tree(t)
     #t = union_tree(t)
 
@@ -268,11 +289,11 @@ def clean_c(program) :
     return f
 
 f = clean_c(f)
-print('tokens (f)\n'+ f+'\n')
+#print('tokens (f)\n'+ f+'\n')
 
 ## parsing stuff
-t = parse(f)
-print('trees (t)')
+#print('trees (t)')
+t = parse_c(f)
 print(t)
 #for b in t : print(b)
 
@@ -289,7 +310,7 @@ print(t)
 # code generation
 #print('code (c)')
 c = code_generation(t)
-print(c)
+#print(c)
 
 #main()
 # }}}
