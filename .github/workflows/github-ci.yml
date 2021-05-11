@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: pip install gensim mypy tqdm
-      - run: mypy ast_token_extractor.py
+      - run: mypy ast_token_extractor.py --ignore-missing-imports
       - run: python3 ast_token_extractor.py
       
   build_swarg_fnarg_extract:
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: pip3 install mypy tqdm
-      - run: mypy swarg_fnargs2tokens.py
+      - run: mypy swarg_fnargs2tokens.py --ignore-missing-imports
       - run: python3 swarg_fnargs2tokens.py
       
   build_tokens_popularity:
