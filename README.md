@@ -121,10 +121,9 @@ Dropout in neural network in general is a regularization method that approximate
 ### Python Modules
 + tensorflow
 + keras
-+ word2vec
++ gensim
 + json
 + numpy
 + unittest
-+ KerasClassifier
 
 ## References
