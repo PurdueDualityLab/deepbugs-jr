@@ -107,13 +107,15 @@ graph TD
     end
 ```
 
-#### Dropout-A
-*Description goes here*
+#### Dropout layers
+Dropout in neural network in general is a regularization method that approximates training a large number of neural networks with different architectures in parallel. By "dropping out" neurons, the over-fitting problem can be mitigated. The original authors of Deepbugs simply claims "We apply a dropout of 0.2 to the input layer and the hidden layer" and we followed their approach.
 
 ## Usage
 1. Obtain AST values of javascript source files
 2. Vectorize the AST values using the deepbugs_jr.py
 3. Create the neural network model using the nn_trainer.py
+
+
 
 ## Dependencies
 ### Python Modules
