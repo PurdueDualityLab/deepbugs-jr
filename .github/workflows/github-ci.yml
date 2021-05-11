@@ -6,14 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: pip3 install gensim
+      - run: pip3 install gensim tqdm
       - run: python3 deepbugs_jr.py
 
   build_extract_token_from_ast_node:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: pip install gensim mypy
+      - run: pip install gensim mypy tqdm
       - run: mypy ast_token_extractor.py
       - run: python3 ast_token_extractor.py
       
@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: pip3 install mypy
+      - run: pip3 install mypy tqdm
       - run: mypy swarg_fnargs2tokens.py
       - run: python3 swarg_fnargs2tokens.py
       
