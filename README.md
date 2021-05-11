@@ -113,20 +113,17 @@ Dropout in neural network in general is a regularization method that approximate
 #### Dense layers
 
 ## Usage
-1. Obtain AST values of javascript source files
-2. Vectorize the AST values using the deepbugs_jr.py
-3. Create the neural network model using the nn_trainer.py
+Read the guide in [demo_deepbugs_jr.ipynb](https://github.com/code-correctional-facility/deepbugs-jr/blob/develop/demo_deepbugs_jr.ipynb).
 
 
 
 ## Dependencies
 ### Python Modules
-requirements.txt is provided. The Python module dependeices is as follow:
-+ tensorflow==2.4.1
-+ Keras==2.4.3
-+ gensim==3.8.3
-+ numpy==1.19.5
++ tensorflow
++ keras
++ gensim
 + json
++ numpy
 + unittest
 
 ## References
