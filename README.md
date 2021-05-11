@@ -111,6 +111,11 @@ graph TD
 Dropout in neural network in general is a regularization method that approximates training a large number of neural networks with different architectures in parallel. By "dropping out" neurons, the over-fitting problem can be mitigated. The original authors of Deepbugs states in the paper that they applied a dropout of 0.2 to the input and the hidden layer. To replicate their work, we follow their approach of applying dropout layers. 
 
 #### Dense layers
+Dense layer is most commonly found layer in the models. It is a neural network layer that is connected deeply, which means each neuron in the dense layer receives input from all neurons of its previous layer. 
+
+The original authors claims in their paper that they applied a feedforward neural network with an input layer of a size that depends on the code representation
+provided by the specific bug detector, a single hidden layer of size 200, and an output layer with a single element that represents the probability computed by a bug detector.
+
 
 ## Usage
 Read the guide in [demo_deepbugs_jr.ipynb](https://github.com/code-correctional-facility/deepbugs-jr/blob/develop/demo_deepbugs_jr.ipynb).
