@@ -108,7 +108,7 @@ graph TD
 ```
 
 #### Dropout layers
-Dropout in neural network in general is a regularization method that approximates training a large number of neural networks with different architectures in parallel. By "dropping out" neurons, the over-fitting problem can be mitigated. The original authors of Deepbugs simply claims "We apply a dropout of 0.2 to the input layer and the hidden layer" and we followed their approach.
+Dropout in neural network in general is a regularization method that approximates training a large number of neural networks with different architectures in parallel. By "dropping out" neurons, the over-fitting problem can be mitigated. The original authors of Deepbugs states in the paper that they applied a dropout of 0.2 to the input and the hidden layer. To replicate their work, we follow their approach of applying dropout layers. 
 
 ## Usage
 1. Obtain AST values of javascript source files
