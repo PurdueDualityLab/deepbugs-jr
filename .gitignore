@@ -355,3 +355,5 @@ MigrationBackup/
 # Apple products tend to use this file system hint
 .DS_Store
 data
+demo_data
+*/150k*
