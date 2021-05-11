@@ -126,4 +126,3 @@ Read the guide in [demo_deepbugs_jr.ipynb](https://github.com/code-correctional-
 + numpy
 + unittest
 
-## References
