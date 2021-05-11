@@ -31,7 +31,7 @@ def filter_token_list(tokens):
 
 
 def main():
-"""
+    """
     tokens = [] 
     for i in range(10):
         File = open(f"demo_data/150k_training.json",'r', encoding="latin1")
@@ -70,7 +70,7 @@ def main():
     token_to_vector_file_name = "token_to_vector_" + str(timestamp) + ".json"
     with open(token_to_vector_file_name, "w") as file:
         json.dump(token_to_vector, file, sort_keys=True, indent=4)
-"""
+    """
 
 
 if __name__ == "__main__":
