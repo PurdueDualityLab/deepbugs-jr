@@ -121,11 +121,12 @@ Dropout in neural network in general is a regularization method that approximate
 
 ## Dependencies
 ### Python Modules
-+ tensorflow
-+ keras
-+ gensim
+requirements.txt is provided. The Python module dependeices is as follow:
++ tensorflow==2.4.1
++ Keras==2.4.3
++ gensim==3.8.3
++ numpy==1.19.5
 + json
-+ numpy
 + unittest
 
 ## References
