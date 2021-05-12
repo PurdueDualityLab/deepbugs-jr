@@ -25,6 +25,7 @@ def fragment(name :str,  expr :str) :
 
     return f
 
+# verbose, but literal
 is_alpha_ = fragment('alpha_',
                     'abcdefhijklmnopqrstuvwxyz'
                     +'ABCDEFHIJKLMNOPQRSTUVWXYZ'
@@ -48,7 +49,7 @@ def is_int(string:str) -> bool:
             return False
     return True
 
-def is_decimal(string) -> bool:
+def is_decimal(string:str) -> bool:
     "float literal default found in C-like languages"
     if not is_digit(string[0]) :
         return False
@@ -57,7 +58,7 @@ def is_decimal(string) -> bool:
             return False
     return True
 
-def is_c_identifier(string) -> bool:
+def is_c_identifier(string:str) -> bool:
     "is this string a C identifier"
     if not is_alpha_(string[0]) :
         return False
@@ -111,15 +112,12 @@ def remove_multi_comments(start,end) :
         return string
     return f
 
-# these names are kind of tedious
-remove_single_comments_c = remove_single_comments('//')
-remove_multi_comments_c = remove_multi_comments('/*','*/')
-
 def remove_extra_whitespace(string) :
     string = string.replace('\r','')
     string = string.replace('\n','')
     string = ' '.join(string.split())
     return string
+
 # }}}
 
 # tokenizing
@@ -203,8 +201,6 @@ def name_tree(exclude_keywords) :
         
     return f
                 
-c_name_tree = name_tree(ckeywords)
-
 def c_literal_tree(tokens) : # note: not literally a tree
         
         for i in range(len(tokens)) :
@@ -214,45 +210,14 @@ def c_literal_tree(tokens) : # note: not literally a tree
         
         return tokens
         
+# }}}
 
-#def typedef_tree(type_name) :
-#    
-#    def f (tokens) :
-#        # iterate over syntax
-#        for i in range(len(tokens[:-len('si{};')])) :
-#            # grammar spec
-#            if (type_name in tokens[i  ]['value'] and
-#                '{'       in tokens[i+2]['value']) :
-#
-#                # need to copy only on complete grammar
-#                temp = {}
-#                temp['type'] = type_name
-#                #tokens[i]['type'] = type_name 
-#
-#                # body
-#                tempbody = []
-#                #tokens[i]['children'] = []
-#                j = i+3
-#                while  j < len(tokens) and tokens[j]['value'] != '}' :
-#                    tokens[i]['children'].append(tokens[j]['id'])
-#                    j += 1
-#
-#        return tokens
-#    return f
-       
 
-## make more syntax trees
-#tree = {}
-## primitives
-#for prime in ['char','int','float','double','_Bool','struct','union'] :
-#    tree.update({ prime : typeinit_tree(prime) })
-## declaring stuff
-#union_tree = typedef_tree('union')
-#struct_tree = typedef_tree('struct')
-#dot_tree = relation_tree('.')
-#comma_tree = relation_tree(',')
-#plus_tree = relation_tree('+')
-#assign_tree = relation_tree('=')
+def clean_c(program) :
+    f = remove_single_comments_c(program)
+    f = remove_multi_comments_c(f)
+    f = remove_extra_whitespace(f)
+    return f
 
 def parse_c(tokens) :
     "tokens to trees"
@@ -265,9 +230,7 @@ def parse_c(tokens) :
     #t = union_tree(t)
 
     return t
-# }}}
 
-# code generation
 def code_generation(trees) :
     string = ''
     for t in trees :
@@ -275,42 +238,30 @@ def code_generation(trees) :
 
     return string
 
+def c_compiler(string) :
+    "compile names from c to a json AST"
+    s = remove_single_comments('//')(string)
+    s = remove_multi_comments('/*','*/')(s)
+    s = remove_extra_whitespace(s)
+
+    t = str_to_tokens(s)
+    t = id_tree(t)
+    t = name_tree(ckeywords)(t)
+    t = c_literal_tree(t)
+
+    return t
+
+
 # main
 # {{{
 #def main() :
 import sys
 f = get_file(sys.argv[1])
 
-## scanning stuff
-def clean_c(program) :
-    f = remove_single_comments_c(program)
-    f = remove_multi_comments_c(f)
-    f = remove_extra_whitespace(f)
-    return f
-
-f = clean_c(f)
-#print('tokens (f)\n'+ f+'\n')
-
-## parsing stuff
-#print('trees (t)')
-t = parse_c(f)
+t = c_compiler(f)
 print(t)
-#for b in t : print(b)
 
-# symbol table
-#st = symbol_table(t)
-#print('symbol table (st)')
-#for s in st : print(s, st[s])
-
-## semantic actions
-#print('semantic actions (t)')
-#t = struct_copy(t,st)
-#print(t)
-
-# code generation
-#print('code (c)')
 c = code_generation(t)
-#print(c)
 
 #main()
 # }}}
