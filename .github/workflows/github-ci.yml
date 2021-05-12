@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: python3 parser.py example-program.c
+      - run: python3 parse.py example-program.c
 
 #  build_extract_token_from_ast_node:
 #    runs-on: ubuntu-latest
