@@ -76,8 +76,11 @@ ckeywords = ['auto','break','case','char','const','continue','default',
         'unsigned','void','volatile','while','_Alignas','_Alignof',
         '_Atomic','_Bool','_Complex','_Generic','_Imaginary','_Noreturn',
         '_Static_assert','_Thread_local']
-ckeywords.append('bool') # some common but unlisted stuff
+ckeywords.append('bool') # stuff technically from preprocessor
 ckeywords.append('main') 
+ckeywords.append('include') 
+ckeywords.append('define') 
+ckeywords.append('pragma') 
 # }}}
    
 # clean up code

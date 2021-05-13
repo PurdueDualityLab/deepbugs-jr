@@ -29,5 +29,7 @@ int main ()
 
     2.2;
 
+    " struct struct_name obj1;";
+
     return 0;
 } 
