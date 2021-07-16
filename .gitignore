@@ -354,6 +354,9 @@ MigrationBackup/
 
 # Apple products tend to use this file system hint
 .DS_Store
+
+# our add for project
 data
 demo_data
 */150k*
+*/*.npz

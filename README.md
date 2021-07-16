@@ -1,7 +1,7 @@
 # DeepBugs Replication
 
 ## Description
-For our ECE 595, Advanced Software Engineering, we are doing a replication of the [DeepBugs](https://arxiv.org/abs/1805.11683) study. The following sections describe our approach to conducting the replication.
+We are doing a replication of the [DeepBugs](https://arxiv.org/abs/1805.11683) study. The following sections describe our approach to conducting the replication.
 
 To properly view some of the diagrams below, the [Mermaid-Diagrams](https://chrome.google.com/webstore/detail/mermaid-diagrams/phfcghedmopjadpojhmmaffjmfiakfil/related?hl=en-US) Chrome extenstion may be necessary.
 
@@ -118,7 +118,7 @@ provided by the specific bug detector, a single hidden layer of size 200, and an
 
 
 ## Usage
-Read the guide in [demo_deepbugs_jr.ipynb](https://github.com/code-correctional-facility/deepbugs-jr/blob/develop/demo_deepbugs_jr.ipynb).
+Read the guide in [demo_deepbugs_jr.ipynb](https://github.com/deep-bugs-jr/deep-bugs-jr/blob/main/demo_deepbugs_jr.ipynb).
 
 
 
@@ -127,7 +127,5 @@ Read the guide in [demo_deepbugs_jr.ipynb](https://github.com/code-correctional-
 + tensorflow
 + keras
 + gensim
-+ json
 + numpy
-+ unittest
 
