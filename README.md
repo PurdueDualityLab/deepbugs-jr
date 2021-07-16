@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/341390371.svg)](https://zenodo.org/badge/latestdoi/341390371)
+
 # DeepBugs Replication
 
 ## Description
