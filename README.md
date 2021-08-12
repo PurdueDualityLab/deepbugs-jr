@@ -2,8 +2,18 @@
 
 # DeepBugs Replication
 
+## Summary
+
+We conducted a replication of the [DeepBugs](https://arxiv.org/abs/1805.11683) study.
+This replication was accepted in the artifact track of ESEC/FSE'21 as a way to grant the "Results Replicated" badge to the original work.
+
+For the one-page abstract and a longer technical report, look in the directory `paper/`.
+
+For the description of our replication process, read below.
+
 ## Description
-We are doing a replication of the [DeepBugs](https://arxiv.org/abs/1805.11683) study. The following sections describe our approach to conducting the replication.
+
+The following sections describe our approach to conducting the replication.
 
 To properly view some of the diagrams below, the [Mermaid-Diagrams](https://chrome.google.com/webstore/detail/mermaid-diagrams/phfcghedmopjadpojhmmaffjmfiakfil/related?hl=en-US) Chrome extenstion may be necessary.
 
